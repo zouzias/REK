@@ -12,7 +12,7 @@ Available at http://arxiv.org/abs/1205.5770
 Installation instructions
 ======================
 
-To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
+This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
 compileMe
 
