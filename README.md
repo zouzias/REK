@@ -47,7 +47,6 @@ utils.{c,h}        - Utilities
 plotResults.m      - Plot results in MATLAB
 testREK.m          - Auxiliary matlab script
 
-
 ============================================
 Copyright and licensing information
 ============================================
