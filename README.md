@@ -39,12 +39,19 @@ A file manifest (list of files included)
 ============================================
 
 AliasSampler.{c,h} - Alias sampling method for finite distributions
+
 compileMe.m        - Compile project under MATLAB
+
 REKBLAS.{c,h}      - Main Source files (implement the algorithm)
+
 REKBLAS_mex.{c,h}  - Wrapper for MATLAB using Mex technology
+
 types.h            - Data-structures
+
 utils.{c,h}        - Utilities
+
 plotResults.m      - Plot results in MATLAB
+
 testREK.m          - Auxiliary matlab script
 
 ============================================
