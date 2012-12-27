@@ -1,6 +1,6 @@
 This directory contains an implementation of the algorithm described in [1].
 
-[1] Randomized Extended Kaczmarz for Solving Least-Squares.
+[1] Randomized Extended Kaczmarz for Solving Least-Squares.\\
     Authors: Anastasios Zouzias and Nikolaos Freris
     Available at http://arxiv.org/abs/1205.5770
 
