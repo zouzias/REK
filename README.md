@@ -1,8 +1,11 @@
-This directory contains an implementation of the algorithm described in [1].
+This directory contains an implementation of the algorithm described in [1] by Anastasios Zouzias.
 
-[1] Randomized Extended Kaczmarz for Solving Least-Squares.\\
-    Authors: Anastasios Zouzias and Nikolaos Freris
-    Available at http://arxiv.org/abs/1205.5770
+[1]
+Randomized Extended Kaczmarz for Solving Least-Squares.
+
+Authors: Anastasios Zouzias and Nikolaos Freris
+
+Available at http://arxiv.org/abs/1205.5770
 
 
 ======================
@@ -19,14 +22,19 @@ plotResults
 
 under MATLAB to plot a sample execution (adjust the diemsionality of m, n depending on your CPU specs).
 
-Given any m x n real matrix and m-dim vector b, the following instruction executes the randomized extended Kaczmarz algorithm with parameters:
-
-*) MAXITERS - (Input) maximum number of iterations
-*) TOL      - (Input) Tolerance parameter
-*) x        - (Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-*) dt       - Elapsed time using Unix routing ftime()
 
 [x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
+
+Given any m x n real matrix A and m-dim vector b, the following instruction executes the randomized extended Kaczmarz algorithm with parameters:
+
+*) MAXITERS - (Input) maximum number of iterations
+
+*) TOL      - (Input) Tolerance parameter
+
+*) x        - (Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
+
+*) dt       - Elapsed time using Unix routing ftime()
+
 
 ======================
 Operating instructions
