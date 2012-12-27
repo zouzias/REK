@@ -34,9 +34,10 @@ Operating instructions
 
 The current implementation has been tested under Linux.
 
-======================
+============================================
 A file manifest (list of files included)
-======================
+============================================
+
 AliasSampler.{c,h} - Alias sampling method for finite distributions
 compileMe.m        - Compile project under MATLAB
 REKBLAS.{c,h}      - Main Source files (implement the algorithm)
@@ -47,33 +48,30 @@ plotResults.m      - Plot results in MATLAB
 testREK.m          - Auxiliary matlab script
 
 
-======================
+============================================
 Copyright and licensing information
-======================
+============================================
 
-======================
+See LICENSE file.
+
+============================================
 Contact information for the distributor or programmer
-======================
+============================================
+
 
 ======================
-Known bugs[1]
+Known bugs
 ======================
 
-======================
-Troubleshooting[1]
-======================
+None yet.
 
 ======================
+Troubleshooting
+======================
+N/A
+
+============================================
 Credits and acknowledgments
-======================
+============================================
 
-A changelog (usually for programmers)
-
-Version 0.1
-
-
-
-
-
-
-
+Credits to TODO
