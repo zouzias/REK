@@ -88,4 +88,4 @@ N/A
 Credits and acknowledgments
 </h2>
 
-Credits to for the aliasing method (see files AliasSampler.{c,h})
+Credits go to Warren D. Smith for implementing the aliasing method (see files AliasSampler.{c,h})
