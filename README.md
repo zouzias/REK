@@ -13,55 +13,48 @@ Installation instructions
 
 This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
+<code>
 compileMe
+</code>
 
 under your MATLAB enviroment. This MATLAB script will compile the mex implementation of REK-BLAS. Then, type
 
+<code>
 plotResults
-
+</code>
 under MATLAB to plot a sample execution (adjust the diemsionality of m, n depending on your CPU specs).
 
-
+<code>
 [x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
+</code>
 
 Given any m x n real matrix A and m-dim vector b, the following instruction executes the randomized extended Kaczmarz algorithm with parameters:
 
-*) MAXITERS - (Input) maximum number of iterations
-
-*) TOL      - (Input) Tolerance parameter
-
-*) x        - (Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-
-*) dt       - Elapsed time using Unix routing ftime()
++ MAXITERS - (Input) maximum number of iterations
++ TOL      - (Input) Tolerance parameter
++ x        - (Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
++ dt       - Elapsed time using Unix routing ftime()
 
 
 Operating instructions
 ================================
 
-The current implementation has been tested under Linux.
+The current implementation has been tested under Linux running MATLAB 7.9 with GCC 4.7.2.
 
 A file manifest (list of files included)
 ================================
 
-AliasSampler.{c,h} - Alias sampling method for finite distributions
-
-compileMe.m        - Compile project under MATLAB
-
-REKBLAS.{c,h}      - Main Source files (implement the algorithm)
-
-REKBLAS_mex.{c,h}  - Wrapper for MATLAB using Mex technology
-
-types.h            - Data-structures
-
-utils.{c,h}        - Utilities
-
-plotResults.m      - Plot results in MATLAB
-
-testREK.m          - Auxiliary matlab script
+* AliasSampler.{c,h} - Alias sampling method for finite distributions
+* compileMe.m        - Compile project under MATLAB
+* REKBLAS.{c,h}      - Main Source files (implement the algorithm)
+* REKBLAS_mex.{c,h}  - Wrapper for MATLAB using Mex technology
+* types.h            - Data-structures
+* utils.{c,h}        - Utilities
+* plotResults.m      - Plot results in MATLAB
+* testREK.m          - Auxiliary matlab script
 
 Copyright and licensing information
 ================================
-
 
 See LICENSE file.
 
@@ -84,4 +77,4 @@ N/A
 Credits and acknowledgments
 ================================
 
-Credits to TODO
+Credits to for the aliasing method (see files AliasSampler.{c,h})
