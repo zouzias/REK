@@ -1,14 +1,19 @@
 <h2> Randomized Extended Kaczmarz </h2>
 <h3> Overview </h3>
-This directory contains an implementation of the algorithm described in [1] by Anastasios Zouzias.
+This directory contains a C implementation of the algorithm described in the following research paper:
+<br>
+<b>[Randomized Extended Kaczmarz for Solving Least-Squares.]((http://arxiv.org/abs/1205.5770)<br>
+Authors: Anastasios Zouzias and Nikolaos Freris </b> 
+<br>
 
-
-* [1] - <b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>
-
-Authors: Anastasios Zouzias and Nikolaos Freris
-
-Available at http://arxiv.org/abs/1205.5770
-
+<h3> Developer </h3>
+[Anastasios Zouzias](http://www.cs.toronto.edu/~zouzias/)
+<br>
+Dept. of Computer Science
+<br>
+University of Toronto
+<br>
+Canada
 
 <h2>
 Installation instructions
