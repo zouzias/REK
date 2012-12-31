@@ -25,16 +25,19 @@ plotResults
 
 under MATLAB to plot a sample execution (adjust the diemsionality of m, n depending on your CPU specs).
 
+<p>
+After compilation, you can execute the <b>randomized extended Kaczmarz</b> using the following command:
 <code>
 [x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
 </code>
-
 Given any m x n real matrix A and m-dim vector b, the following instruction executes the randomized extended Kaczmarz algorithm with parameters:
 
-+ MAXITERS - (Input) maximum number of iterations
-+ TOL      - (Input) Tolerance parameter
-+ x        - (Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-+ dt       - Elapsed time using Unix routing ftime()
++ A        - <b>(Input) An m x n real matrix
++ b        - <b>(Input) An m dimensional vector
++ MAXITERS - <b>(Input) maximum number of iterations
++ TOL      - <b>(Input) Tolerance parameter
++ x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
++ dt       - <b>(Output) Elapsed time using Unix routing ftime()
 
 
 Operating instructions
