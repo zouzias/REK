@@ -22,6 +22,7 @@ under your MATLAB enviroment. This MATLAB script will compile the mex implementa
 <code>
 plotResults
 </code>
+
 under MATLAB to plot a sample execution (adjust the diemsionality of m, n depending on your CPU specs).
 
 <code>
@@ -44,14 +45,14 @@ The current implementation has been tested under Linux running MATLAB 7.9 with G
 A file manifest (list of files included)
 ================================
 
-* AliasSampler.{c,h} - Alias sampling method for finite distributions
-* compileMe.m        - Compile project under MATLAB
-* REKBLAS.{c,h}      - Main Source files (implement the algorithm)
-* REKBLAS_mex.{c,h}  - Wrapper for MATLAB using Mex technology
-* types.h            - Data-structures
-* utils.{c,h}        - Utilities
-* plotResults.m      - Plot results in MATLAB
-* testREK.m          - Auxiliary matlab script
+* AliasSampler.{c,h} - <b> Alias sampling method for finite distributions</b>
+* compileMe.m        - <b> Compile project under MATLAB </b>
+* REKBLAS.{c,h}      - <b> Main Source files (implement the algorithm) </b>
+* REKBLAS_mex.{c,h}  - <b> Wrapper for MATLAB using Mex technology </b>
+* types.h            - <b> Data-structures </b>
+* utils.{c,h}        - <b> Utilities </b>
+* plotResults.m      - <b> Plot results in MATLAB </b>
+* testREK.m          - <b> Auxiliary matlab script </b>
 
 Copyright and licensing information
 ================================
