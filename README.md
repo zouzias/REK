@@ -1,4 +1,4 @@
-<h2> Randomized Extended Kaczmarz </h2>
+<h2> Randomized Extended Kaczmarz (REK-BLAS)</h2>
 <h3> Overview </h3>
 This directory contains a C implementation of the algorithm described in the following research paper:
 <br>
@@ -15,6 +15,21 @@ Dept. of Computer Science
 University of Toronto
 <br>
 Canada
+
+<h2>
+Implementation Details
+</h2>
+The proposed algorithm has been entirely implemented in C. REK-BLAS is an implementation of REK 
+with two additional technical features. First, REK-BLAS uses level-1 BLAS routines for all operations REK 
+and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently memory access 
+of both the rows and columns of A using BLAS. We check for convergence after every 8min (m,n) iterations. 
+
+The sampling operations of REK are implemented using the so-called ``alias method'' for generating samples 
+from any given discrete distribution \cite{sampling:Walker,random:Alias}. The alias method, assuming access 
+to a uniform random variable on [0,1] in constant time and linear time preprocessing, generates one sample
+of the given distribution in constant time~\cite{random:Alias}. We use an implementation of W. D. Smith that 
+is described in~\cite{aliasMethod:C} and C's <it>drand48</it>() to get uniform samples from [0,1].
+
 
 <h2>
 Installation instructions
@@ -46,7 +61,7 @@ where the <b>input/output</b> parameters are :
 + b        - <b>(Input) An m dimensional vector
 + TOL      - <b>(Input) Tolerance parameter
 + x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-+ dt       - <b>(Output) Elapsed time using Unix routing ftime()
++ dt       - <b>(Output) Elapsed time using Unix routine ftime()
 
 <h2>
 Operating instructions
@@ -78,7 +93,7 @@ Contact information for the distributor or programmer
 </h2>
 
 <h2>
-Known bugs
+* Improve stopping rule for sparse case.
 </h2>
 
 None yet.
