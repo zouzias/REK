@@ -12,7 +12,7 @@ precond = 1 ./ sqrt( sum(A.^2, 1) );
 A = A * diag(precond); 
 
 A = full(A);
-A = sparse(A);
+% A = sparse(A);
 
 disp('**************************')
 disp( sprintf('Matlab''s solver backslash '));

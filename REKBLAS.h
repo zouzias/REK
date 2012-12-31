@@ -15,10 +15,12 @@
 #include "AliasSampler.h"
 #include "utils.h"
 
-/*!< Error tolerance for REK */
-double TOL;			
 /*!< REK periodically checks for convergence after BLOCKSIZE iterations */
-unsigned int BLOCKSIZE;
+extern unsigned int BLOCKSIZE;
+
+/*!< Maximum number of iterations */
+extern unsigned int MAXITERS;
+
 
 /**
  * Randomized Extended Kaczmarz method for dense input matrices
@@ -37,7 +39,7 @@ unsigned int BLOCKSIZE;
  * @param  iters (Input)  Maximum number of iterations
  * @return None
  */
-void REKBLAS_Dense (double *x, MAT * A, const double *b, unsigned int iters);
+void REKBLAS_Dense (MAT * A, double *x, const double *b, double TOL);
 
 /**
  * Randomized Extended Kaczmarz method for sparse input matrices
@@ -50,14 +52,14 @@ void REKBLAS_Dense (double *x, MAT * A, const double *b, unsigned int iters);
  *
  * [1] - Randomized Extended Kaczmarz for Solving Least-Squares. Anastasios Zouzias and Nikolaos Freris (http://arxiv.org/abs/1205.5770)
  *
- * @param  x (Output) The minimum Euclidean norm least squares vector x, i.e., argmin ||Ax -b ||_2
- * @param  A (Input)  An m x n matrix A (stored in compressed column matrix format)
- * @param  b (Input)  Right hand side vector b
- * @param  iters (Input)  Maximum number of iterations
+ * @param  x   (Output) The minimum Euclidean norm least squares vector x, i.e., argmin ||Ax -b ||_2
+ * @param  A   (Input)  An m x n matrix A (stored in compressed column matrix format)
+ * @param  b   (Input)  Right hand side vector b
+ * @param  TOL (Input)  Tolerance of the algorithm
  * @return See first argument
  */
-void REKBLAS_Sparse (double *x, const SMAT * A, const double *b,
-		     unsigned int iters);
+void REKBLAS_Sparse (const SMAT * A, double *x, const double *b,
+		     double TOL);
 
 
 #endif

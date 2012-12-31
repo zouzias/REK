@@ -32,19 +32,26 @@ function [myerr] = testREK(A, b, xopt)
 
 %------------- BEGIN CODE --------------
 
-TOL = 10e-12;
 
-iters = 5000 : 5000 : 100000;
+REPS = 4;
 
-myerr = zeros(numel( iters), 1);
+TOL = (0.1).^[1:14];
 
-for i = 1 : numel(iters)
+myerr = zeros(numel( TOL), 1);
+
+for i = 1 : numel(TOL)
     
     disp('**************************')
-    disp( sprintf('Iters # %d out of %d', i, numel(iters) ) );
+    disp( sprintf('Iters # %d out of %d', i, numel(TOL) ) );
+    disp( sprintf('Stopping accuracy %f', TOL(i) ) );
+
+    %avg = 0;
+    %for i = 1 : REPS
+        [x, dt] = REKBLAS_mex(A, b, TOL(i));
+    %    avg = avg + dt;
+    %end
+    %avg = avg / REPS;
     
-    [x, dt] = REKBLAS_mex(A, b, iters(i), TOL );
-       
     myerr(i) = norm( A * (x - xopt), 'inf' );
 end
 

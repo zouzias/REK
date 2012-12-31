@@ -25,16 +25,16 @@ mexFunction (int nargout, mxArray * pargout[], int nargin,
 {
   /* Local variables used in REK */
   mwSize m, n, k, l;
-  unsigned int i, iters;
-  double *x, *b, dt;
+  unsigned int i;
+  double *x, *b, dt, TOL;
 
   /* check: only one input and one output argument */
-  if (nargin != 4)
+  if (nargin != 3)
     mexErrMsgTxt
-      ("Must have three input arguments.\n Sample execution: [x, time] = REKblas_mex(A, b, MAXITERS, TOL);\n");
+      ("Must have three input arguments.\n Sample execution: [x, time] = REKblas_mex(A, b, TOL);\n");
   if (nargout != 2)
     mexErrMsgTxt
-      ("Must have one output argument.\n Sample execution: [x, time] = REKblash_mex(A, b, MAXITERS, TOL)\n");
+      ("Must have two output argument.\n Sample execution: [x, time] = REKblash_mex(A, b, TOL)\n");
 
   /* prevent you from passing a sparse matrix,
    * a string matrix, or a complex array. mxIsComplex
@@ -56,8 +56,7 @@ mexFunction (int nargout, mxArray * pargout[], int nargin,
   k = mxGetM (pargin[1]);
   l = mxGetN (pargin[1]);
 
-  iters = mxGetScalar (pargin[2]);	// Maximum number of iterations
-  TOL = mxGetScalar (pargin[3]);	// Accuracy or tolerance of algorithm
+  TOL = mxGetScalar (pargin[2]);	// Accuracy or tolerance of algorithm
 
   if (k != m || l > 1)
     mexErrMsgTxt
@@ -114,7 +113,7 @@ mexFunction (int nargout, mxArray * pargout[], int nargin,
       memcpy (A->sVal, s, nnz * sizeof (double));
 
       dt = -wtime ();
-      REKBLAS_Sparse (x, A, b, iters);
+      REKBLAS_Sparse (A, x, b, TOL);
       dt += wtime ();
 
       freeSMAT (A);
@@ -132,7 +131,7 @@ mexFunction (int nargout, mxArray * pargout[], int nargin,
       memcpy (A->val, Aptr, m * n * sizeof (double));
 
       dt = -wtime ();
-      REKBLAS_Dense (x, A, b, iters);
+      REKBLAS_Dense (A, x, b, TOL);
       dt += wtime ();
 
       freeMAT (A);

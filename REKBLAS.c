@@ -3,8 +3,15 @@
 
 #include "mex.h"
 
+/*!< REK periodically checks for convergence after BLOCKSIZE iterations */
+unsigned int BLOCKSIZE;
+
+/*!< Maximum number of iterations */
+unsigned int MAXITERS = 10e8;
+
+
 void
-REKBLAS_Dense (double *x, MAT * A, const double *b, unsigned int iters)
+REKBLAS_Dense (MAT * A, double *x, const double *b, double TOL)
 {
 
   size_t m = A->m, n = A->n, k, i_k, j_k;
@@ -35,10 +42,10 @@ REKBLAS_Dense (double *x, MAT * A, const double *b, unsigned int iters)
 
   memcpy (z, b, m * sizeof (double));	// Initialize z: z = y;
 
-  for (k = 0; k < iters; k++)
+  for (k = 0; k < MAXITERS; k++)
     {
 
-      if ((k + 1) % BLOCKSIZE == 0 && residError (A, x, b, z) < TOL)
+      if ((k + 1) % BLOCKSIZE == 0 && residError (A, x, b, z) < TOL && residError(Atransp, z, b, b) < TOL)
 	{
 	  printf ("-->REK_Dense stopped at %d <--\n", k);
 	  break;
@@ -81,8 +88,8 @@ REKBLAS_Dense (double *x, MAT * A, const double *b, unsigned int iters)
 };				
 
 void
-REKBLAS_Sparse (double *x, const SMAT * A, const double *b,
-		unsigned int iters)
+REKBLAS_Sparse (const SMAT * A, double *x, const double *b,
+		double TOL)
 {
 
   unsigned int k, l, i_k, j_k, *rowSampl, *colSampl;
@@ -112,7 +119,7 @@ REKBLAS_Sparse (double *x, const SMAT * A, const double *b,
   memcpy (z, b, m * sizeof (double));	// Initialize z: z = y;
 
 
-  for (k = 0; k < iters; k++)
+  for (k = 0; k < MAXITERS; k++)
     {				// Perform the iterations
 
       if ((k + 1) % BLOCKSIZE == 0 && residErrorSparse (A, x, b, z) < TOL)
