@@ -30,7 +30,8 @@ After compilation, you can execute the <b>randomized extended Kaczmarz</b> using
 <code>
 [x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
 </code>
-Given any m x n real matrix A and m-dim vector b, the following instruction executes the randomized extended Kaczmarz algorithm with parameters:
+
+where the <b>input/output</b> parameters are : 
 
 + A        - <b>(Input) An m x n real matrix
 + b        - <b>(Input) An m dimensional vector
