@@ -28,7 +28,8 @@ under MATLAB to plot a sample execution (adjust the diemsionality of m, n depend
 <p>
 After compilation, you can execute the <b>randomized extended Kaczmarz</b> using the following command:
 <code>
-[x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
+<b>[x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
+</b>
 </code>
 
 where the <b>input/output</b> parameters are : 
