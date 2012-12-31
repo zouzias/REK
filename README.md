@@ -2,8 +2,9 @@
 <h3> Overview </h3>
 This directory contains a C implementation of the algorithm described in the following research paper:
 <br>
-<b>[Randomized Extended Kaczmarz for Solving Least-Squares.]((http://arxiv.org/abs/1205.5770)<br>
-Authors: Anastasios Zouzias and Nikolaos Freris </b> 
+[<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://arxiv.org/abs/1205.5770)
+<br>
+Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
 <br>
 
 <h3> Developer </h3>
