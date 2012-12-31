@@ -36,14 +36,13 @@ under MATLAB to plot a sample execution (adjust the diemsionality of m, n depend
 After compilation, you can execute the <b>randomized extended Kaczmarz</b> using the following command:
 
 <code>
-[x, dt] = REKBLAS_mex(A, b, MAXITERS, TOL);
+[x, dt] = REKBLAS_mex(A, b, TOL);
 </code>
 
 where the <b>input/output</b> parameters are : 
 
 + A        - <b>(Input) An m x n real matrix
 + b        - <b>(Input) An m dimensional vector
-+ MAXITERS - <b>(Input) maximum number of iterations
 + TOL      - <b>(Input) Tolerance parameter
 + x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
 + dt       - <b>(Output) Elapsed time using Unix routing ftime()
