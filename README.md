@@ -8,9 +8,8 @@ Authors: Anastasios Zouzias and Nikolaos Freris
 Available at http://arxiv.org/abs/1205.5770
 
 
-======================
 Installation instructions
-======================
+================================
 
 This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
@@ -36,15 +35,13 @@ Given any m x n real matrix A and m-dim vector b, the following instruction exec
 *) dt       - Elapsed time using Unix routing ftime()
 
 
-======================
 Operating instructions
-======================
+================================
 
 The current implementation has been tested under Linux.
 
-============================================
 A file manifest (list of files included)
-============================================
+================================
 
 AliasSampler.{c,h} - Alias sampling method for finite distributions
 
@@ -62,30 +59,29 @@ plotResults.m      - Plot results in MATLAB
 
 testREK.m          - Auxiliary matlab script
 
-============================================
 Copyright and licensing information
-============================================
+================================
+
 
 See LICENSE file.
 
-============================================
+
 Contact information for the distributor or programmer
-============================================
+================================
 
 
-======================
 Known bugs
-======================
+================================
 
 None yet.
 
-======================
+
 Troubleshooting
-======================
+================================
+
 N/A
 
-============================================
 Credits and acknowledgments
-============================================
+================================
 
 Credits to TODO
