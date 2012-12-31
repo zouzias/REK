@@ -54,10 +54,10 @@ A file manifest (list of files included)
 * compileMe.m        - <b> Compile project under MATLAB </b>
 * REKBLAS.{c,h}      - <b> Main Source files (implement the algorithm) </b>
 * REKBLAS_mex.{c,h}  - <b> Wrapper for MATLAB using Mex technology </b>
-* types.h            - <b> Data-structures </b>
+* types.h            - <b> Useful structures </b>
 * utils.{c,h}        - <b> Utilities </b>
 * plotResults.m      - <b> Plot results in MATLAB </b>
-* testREK.m          - <b> Auxiliary matlab script </b>
+* testREK.m          - <b> Auxiliary MATLAB script </b>
 
 Copyright and licensing information
 ================================
