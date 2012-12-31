@@ -1,6 +1,6 @@
 <h2> Randomized Extended Kaczmarz (REK-BLAS)</h2>
 <h3> Overview </h3>
-This directory contains a C implementation of the algorithm described in the following research paper:
+The current project contains a C implementation of the algorithm described in the following research paper:
 <br>
 [<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://arxiv.org/abs/1205.5770)
 <br>
