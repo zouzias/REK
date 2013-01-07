@@ -19,7 +19,7 @@ Canada
 <h2>
 Implementation Details
 </h2>
-The proposed algorithm has been entirely implemented in C. REK-BLAS is an implementation of REK (as described
+The algorithm (REK-BLAS) has been entirely implemented in C. REK-BLAS is an implementation of REK (as described
 in the above paper) with two additional technical features. First, REK-BLAS uses level-1 BLAS routines for 
 all operations REK 
 and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently memory access 
