@@ -1,8 +1,8 @@
-<h2> Randomized Extended Kaczmarz (REK-BLAS)</h2>
+<h2> Randomized Extended Kaczmarz</h2>
 <h3> Overview </h3>
-The current project contains a C implementation of the algorithm described in the following research paper:
+The current project contains implementations of the algorithm described in the following research paper:
 <br>
-[<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://arxiv.org/abs/1205.5770)
+[<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://dx.doi.org/10.1137/120889897)
 <br>
 Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
 <br>
@@ -14,26 +14,25 @@ Dept. of Computer Science
 <br>
 University of Toronto
 <br>
-Canada
+Toronto, Canada
 
 <h2>
 Implementation Details
 </h2>
-The algorithm (REK-BLAS) has been entirely implemented in C. REK-BLAS is an implementation of REK (as described
+The algorithm (REK-BLAS) has been entirely implemented in C and Java. REK is an implementation of REK (as described
 in the above paper) with two additional technical features. First, REK-BLAS uses level-1 BLAS routines for 
-all operations REK 
-and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently memory access 
-of both the rows and columns of A using BLAS. We check for convergence after every 8min (m,n) iterations. 
+all operations REK and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently 
+memory access of both the rows and columns of A using BLAS. 
+
+In the C implementation, we check for convergence after every 8min (m,n) iterations. 
 
 The sampling operations of REK are implemented using the so-called ``alias method'' for generating samples 
-from any given discrete distribution \cite{sampling:Walker,random:Alias}. The alias method, assuming access 
+from any given discrete distribution [Vos91]. In particular, the alias method, assuming access 
 to a uniform random variable on [0,1] in constant time and linear time preprocessing, generates one sample
-of the given distribution in constant time~\cite{random:Alias}. We use an implementation of W. D. Smith that 
-is described in~\cite{aliasMethod:C} and C's <it>drand48</it>() to get uniform samples from [0,1].
-
+of the given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu).
 
 <h2>
-Installation instructions
+Installation instructions for MATLAB
 </h2>
 This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
@@ -108,4 +107,8 @@ N/A
 Credits and acknowledgments
 </h2>
 
-Credits go to Warren D. Smith for implementing the aliasing method (see files AliasSampler.{c,h})
+Credits go to Warren D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for implementing the aliasing method [Vos91] in C and Java, respectively.
+<br><br>
+[Vos91] M. D. Vose. A Linear Algorithm for Generating Random Numbers with a given Distribution. 
+<br>
+IEEE Trans. Softw. Eng., 17(9):972–975, September 1991.
