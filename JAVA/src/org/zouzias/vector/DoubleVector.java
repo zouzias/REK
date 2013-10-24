@@ -1,5 +1,6 @@
 package org.zouzias.vector;
 
+import java.util.Iterator;
 import java.util.List;
 import org.zouzias.BLAS.BLASLevelOne;
 
@@ -51,4 +52,5 @@ public abstract class DoubleVector implements BLASLevelOne {
      * @return
      */
     public abstract List<Double> asList();
+
 }

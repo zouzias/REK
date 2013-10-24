@@ -81,7 +81,7 @@ public final class DenseVector extends DoubleVector {
     @Override
     public void scale(double alpha) {
         for (int i = 0; i < vector.length; i++)
-            vector[i] *= alpha;
+            vector[i] = alpha * vector[i];
     }
 
     /**
