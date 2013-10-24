@@ -2,6 +2,7 @@ package org.zouzias.matrix;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.zouzias.utils.NAUtils;
 import org.zouzias.vector.DenseVector;
 import org.zouzias.vector.DoubleVector;
 
@@ -153,12 +154,11 @@ public final class DenseMatrix implements DoubleMatrix {
 
     @Override
     public double normF() {
-        double f = 0;
-        DoubleVector row;
-        for (int i = 0; i < m; i++) 
-            f += Math.pow(rows.get(i).DNRM2(), 2);
-
-        return Math.sqrt(f);
+        double norm = 0;
+        for (int i = 0; i < rows.size(); i++)
+            norm = NAUtils.hypot(norm, rows.get(i).DNRM2());
+       
+        return norm;
     }
 
     @Override
@@ -195,22 +195,19 @@ public final class DenseMatrix implements DoubleMatrix {
     }
 
     @Override
-    public DoubleVector rowProbs() {
+    public DoubleVector rowNorms() {
         DoubleVector row = new DenseVector(m);
         for (int i = 0; i < m; i++)
-            row.set(i, getRow(i).DNRM2());
+            row.set(i, Math.pow(getRow(i).DNRM2(), 2.0));
 
-        row.scale(normF());
         return row;
     }
 
     @Override
-    public DoubleVector columnProbs() {
+    public DoubleVector columnNorms() {
         DoubleVector col = new DenseVector(n);
         for (int j = 0; j < n; j++)
-            col.set(j, getColumn(j).DNRM2());
-
-        col.scale(normF());
+            col.set(j, Math.pow(getColumn(j).DNRM2(), 2.0));
 
         return col;
     }

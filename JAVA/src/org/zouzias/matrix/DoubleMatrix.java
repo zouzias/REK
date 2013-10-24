@@ -50,7 +50,7 @@ public interface DoubleMatrix {
      *
      * @return A vector of size equal to the number of rows containing the above probability distribution.
      */
-    public DoubleVector rowProbs();
+    public DoubleVector rowNorms();
 
     /**
      * Compute a distribution over the columns. Namely, the j-th column A(j) has probability mass
@@ -58,7 +58,7 @@ public interface DoubleMatrix {
      *
      * @return A vector of size equal to the number of column containing the above probability distribution.
      */
-    public DoubleVector columnProbs();
+    public DoubleVector columnNorms();
 
     /**
      * Computes y = A * x

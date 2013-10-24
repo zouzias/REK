@@ -108,22 +108,20 @@ public class SparseMatrix implements DoubleMatrix {
     }
 
     @Override
-    public DoubleVector rowProbs() {
+    public DoubleVector rowNorms() {
         DoubleVector row = new DenseVector(rows.size());
         for (int i = 0, m = rows.size(); i < m; i++)
-            row.set(i, getRow(i).DNRM2());
+            row.set(i, Math.pow(getRow(i).DNRM2(), 2.0));
 
-        row.scale(normF());
         return row;
     }
 
     @Override
-    public DoubleVector columnProbs() {
+    public DoubleVector columnNorms() {
         DoubleVector col = new DenseVector(columns.size());
         for (int j = 0, n = columns.size(); j < n; j++)
-            col.set(j, getColumn(j).DNRM2());
+            col.set(j, Math.pow(getColumn(j).DNRM2(), 2.0));
 
-        col.scale(normF());
         return col;
     }
 
