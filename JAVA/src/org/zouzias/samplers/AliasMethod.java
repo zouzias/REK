@@ -62,6 +62,9 @@ public final class AliasMethod {
             throw new NullPointerException();
         if (probabilities.isEmpty())
             throw new IllegalArgumentException("Probability vector must be nonempty.");
+        
+        /* check if it is a probability distribution, if not normalize it*/
+        scaleProbabilityMass(probabilities);
 
         /* Allocate space for the probability and alias tables. */
         probability = new double[probabilities.size()];
@@ -134,6 +137,16 @@ public final class AliasMethod {
             probability[small.removeLast()] = 1.0;
         while (!large.isEmpty())
             probability[large.removeLast()] = 1.0;
+    }
+    
+    public void scaleProbabilityMass(List<Double> inputProb){
+        double sum = 0;
+        for (double s : inputProb)
+            sum += s;
+        
+        if ( Math.abs(sum - 1) > 10e-2 )
+            for(int i = 0, size = inputProb.size(); i < size ; i++)
+                inputProb.set(i, inputProb.get(i) / sum);
     }
 
     /**
