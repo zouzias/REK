@@ -40,6 +40,8 @@ public class REKSolverTest {
         
         DoubleVector err = new DenseVector(x);
         err.minus(xopt);
+               
+        System.out.println("Frobenius norm: " + Math.pow(A.normF(), 2));
         
         System.out.println("Error equals to " + err.DNRM2());      
         assertTrue("Error is not than 0.1\n Success", err.DNRM2() < 10e-1);
@@ -51,6 +53,7 @@ public class REKSolverTest {
         err = new DenseVector(x);
         err.minus(xopt);
         
+        System.out.println("Frobenius norm: " + A.normF());
         System.out.println("Error equals to " + err.DNRM2());
         assertTrue("Error is not than 0.1\n Success", err.DNRM2() < 10e-1);
     }
@@ -65,6 +68,8 @@ public class REKSolverTest {
         DoubleMatrix A    = new DenseMatrix(m, n);    A.random();
         DoubleVector xopt = new DenseVector(n);        xopt.random();
         DoubleVector b    = A.times(xopt);
+        
+        System.out.println("Frobenius norm: " + A.normF());
         
         REKSolver instance = new REKSolver();
         
@@ -83,6 +88,8 @@ public class REKSolverTest {
         err = new DenseVector(x);
         err.minus(xopt);
         
+       System.out.println("Frobenius norm: " + A.normF());
+
         System.out.println("Error equals to " + err.DNRM2());
         assertTrue("Error is not than 0.1\n Success", err.DNRM2() < 10e-1);
        
