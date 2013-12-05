@@ -19,8 +19,8 @@ Toronto, Canada
 <h2>
 Implementation Details
 </h2>
-The algorithm (REK-BLAS) has been entirely implemented in C and Java. REK is an implementation of REK (as described
-in the above paper) with two additional technical features. First, REK-BLAS uses level-1 BLAS routines for 
+The algorithm (REK-BLAS) has been implemented in C and Java. REK-BLAS is an implementation of REK (as described
+in the above paper) with two additional technical features. First, REK-BLAS utilizes level-1 BLAS routines for 
 all operations REK and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently 
 memory access of both the rows and columns of A using BLAS. 
 
