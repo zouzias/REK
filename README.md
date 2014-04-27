@@ -4,6 +4,8 @@ The current project contains implementations of the algorithm described in the f
 <br>
 [<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://dx.doi.org/10.1137/120889897)
 <br>
+SIAM. J. Matrix Anal. & Appl., 34(2), 773–793. (21 pages) 
+<br>
 Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
 <br>
 
@@ -19,17 +21,16 @@ Toronto, Canada
 <h2>
 Implementation Details
 </h2>
-The algorithm (REK-BLAS) has been implemented in C and Java. REK-BLAS is an implementation of REK (as described
-in the above paper) with two additional technical features. First, REK-BLAS utilizes level-1 BLAS routines for 
-all operations REK and secondly REK-BLAS additionally stores explicitly the transpose of A for more efficiently 
-memory access of both the rows and columns of A using BLAS. 
+The algorithm (REK-BLAS) has been implemented in C and Java. REK-BLAS is an implementation of REK with two additional technical features. First, REK-BLAS utilizes level-1 BLAS routines for 
+all operations of REK and second REK-BLAS additionally stores explicitly the transpose of A for more efficiently 
+memory access of both the rows and columns of A using BLAS (see the above paper for more details). 
 
 In the C implementation, we check for convergence after every 8min (m,n) iterations. 
 
 The sampling operations of REK are implemented using the so-called ``alias method'' for generating samples 
 from any given discrete distribution [Vos91]. In particular, the alias method, assuming access 
 to a uniform random variable on [0,1] in constant time and linear time preprocessing, generates one sample
-of the given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu).
+of a given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for C and Java, respectively.
 
 <h2>
 Installation instructions for MATLAB
@@ -107,7 +108,7 @@ N/A
 Credits and acknowledgments
 </h2>
 
-Credits go to Warren D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for implementing the aliasing method [Vos91] in C and Java, respectively.
+Credits go to Warren D. Smith and Keith Schwarz for implementing the aliasing method [Vos91] in C and Java, respectively.
 <br><br>
 [Vos91] M. D. Vose. A Linear Algorithm for Generating Random Numbers with a given Distribution. 
 <br>
