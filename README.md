@@ -1,4 +1,5 @@
 <h2> Randomized Extended Kaczmarz</h2>
+Java: <img src="https://travis-ci.org/zouzias/REK.svg?branch=master"/>
 <h3> Overview </h3>
 The current project contains implementations of the algorithm described in the following research paper:
 <br>
