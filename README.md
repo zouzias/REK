@@ -34,6 +34,16 @@ to a uniform random variable on [0,1] in constant time and linear time preproces
 of a given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for C and Java, respectively.
 
 <h2>
+Installation instructions for Java
+</h2>
+
+Clone the project. Move to the Java directory, and then type
+
+<code>mvn compile test</code>
+
+To run a few simple tests. See `TestREKSolverIT.java` for an example how to use the REK least-squares solver.
+
+<h2>
 Installation instructions for MATLAB
 </h2>
 This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
