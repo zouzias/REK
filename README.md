@@ -10,15 +10,6 @@ SIAM. J. Matrix Anal. & Appl., 34(2), 773–793. (21 pages)
 Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
 <br>
 
-<h3> Developer </h3>
-[Anastasios Zouzias](http://www.cs.toronto.edu/~zouzias/)
-<br>
-Dept. of Computer Science
-<br>
-University of Toronto
-<br>
-Toronto, Canada
-
 <h2>
 Implementation Details
 </h2>
@@ -32,6 +23,19 @@ The sampling operations of REK are implemented using the so-called ``alias metho
 from any given discrete distribution [Vos91]. In particular, the alias method, assuming access 
 to a uniform random variable on [0,1] in constant time and linear time preprocessing, generates one sample
 of a given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for C and Java, respectively.
+
+<h2>
+Installation instructions for C
+</h2>
+
+Clone the project. Move to the C directory, and then type
+
+<code>make</code>
+<br>
+<code>./REK</code>
+
+The above code runs a simple instance of least-squares for a gaussian random matrix A and gaussian vector b. See 'main.c' for more details.
+
 
 <h2>
 Installation instructions for Java
@@ -124,3 +128,13 @@ Credits go to Warren D. Smith and Keith Schwarz for implementing the aliasing me
 [Vos91] M. D. Vose. A Linear Algorithm for Generating Random Numbers with a given Distribution. 
 <br>
 IEEE Trans. Softw. Eng., 17(9):972–975, September 1991.
+
+
+<h3> Developer/contact </h3>
+[Anastasios Zouzias](http://www.cs.toronto.edu/~zouzias/)
+<br>
+Dept. of Computer Science
+<br>
+University of Toronto
+<br>
+Toronto, Canada
