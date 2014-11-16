@@ -171,25 +171,3 @@ cblas_dnrm2( const int N, const double *X, const int incX)
   
   return scale * sqrt(ssq);
 }
-
-/*!
-  \param[in]     N
-  \param[in]     alpha
-  \param[in,out] X
-  \param[in]     incX
-*/
-void
-cblas_dscal(const int N, const double alpha, double *X, const int incX)
-{
-    int i, ix;
-
-    if (incX <= 0) return;
-
-    ix = OFFSET(N, incX);
-    
-    for (i = 0; i < N; i++) {
-        X[ix] *= alpha;
-        ix    += incX;
-    }
-}
-
