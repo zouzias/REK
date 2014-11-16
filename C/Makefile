@@ -28,4 +28,4 @@ cBLAS.o: cBLAS/cBLAS.c
 	$(CC) $(CFLAGS) cBLAS/cBLAS.c
 
 clean:
-	rm -rf *o rek
+	rm -rf *.o rek
