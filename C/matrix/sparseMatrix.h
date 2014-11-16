@@ -1,21 +1,14 @@
 /* 
  * File:   sparseMatrix.h
- * Author: azo
+ * Author: Anastasios Zouzias
  *
  * Created on October 30, 2013, 1:54 PM
  */
-/*
- * sparseMatrix.h
- *
- *  Created on: Jul 12, 2013
- *      Author: azo
- */
-
 #ifndef SPARSEMATRIX_H_
 #define SPARSEMATRIX_H_
 
 #include<stdio.h>
-#include<stdlib.h>		// for malloc
+#include<stdlib.h>		// malloc
 #include <stddef.h>
 #include <assert.h>
 #include <math.h>

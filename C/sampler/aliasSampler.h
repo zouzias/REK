@@ -1,6 +1,6 @@
 /* 
  * File:   AliasSampler.h
- * Author: azo
+ * Author: Anastasios Zouzias
  *
  * Created on October 30, 2013, 1:45 PM
  */
@@ -8,8 +8,8 @@
 #ifndef _ALIASSAMPLER_HPP
 #define _ALIASSAMPLER_HPP
 
-#include<stdlib.h>		// For malloc
-#include<assert.h>		// for assert
+#include<stdlib.h>		// malloc
+#include<assert.h>		// assert
 
 // Needed for Walker sampling
 #define real double

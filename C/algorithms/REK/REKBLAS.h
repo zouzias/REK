@@ -56,5 +56,4 @@ void denseREKBLAS (MAT * A, double *x, const double *b, double TOL);
 void sparseREK (const SMAT * A, double *x, const double *b,
 		     double TOL);
 
-
 #endif

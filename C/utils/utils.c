@@ -5,20 +5,6 @@
 #include <assert.h>
 #include "utils.h"
 
-int* randPerm(int n) {
-
-	int i, *p = malloc(n * sizeof(int));
-	for (i = 0; i < n; i++)
-		p[i] = i;
-
-	for (i = 0; i < n; i++) {
-		int j = ((double) rand() / (RAND_MAX + 1.0)) * i;
-		p[i] = p[j];
-		p[j] = i;
-	}
-	return p;
-}
-
 /* Get time */
 double wtime() {
 	struct timeb T;

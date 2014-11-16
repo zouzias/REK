@@ -1,18 +1,20 @@
 /*
  * matrix.h
  *
+ * A dense 2D-matrix
+ *
  *  Created on: Jul 12, 2013
- *      Author: azo
+ *      Author: Anastasios Zouzias
  */
 
 #ifndef MATRIX_H_
 #define MATRIX_H_
 
 #include <stdio.h>
-#include <stdlib.h>		// for malloc
+#include <stdlib.h>		// malloc
 #include <stddef.h>
 #include <string.h>		// memset, memcpy
-#include"../cBLAS/cblas.h"
+#include"../cBLAS/cblas.h"  // for DDOT, DAXPY, DNRM2
 
 /**
  * A two-dimensional dense matrix struct
@@ -44,9 +46,6 @@ void freeMAT(MAT * A);
  * @return A transposed stored in "struct matrix"
  */
 MAT *createTransp(const MAT * A);
-
-// Permute the column of A according to perm
-void permuteCols(MAT* A, int* perm);
 
 /**
  * Compute the square column norms of input dense A. Output stored in prob.

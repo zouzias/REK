@@ -1,6 +1,6 @@
 /* 
  * File:   utils.h
- * Author: azo
+ * Author: Anastasios Zouzias
  *
  * Created on October 30, 2013, 1:46 PM
  */
@@ -11,8 +11,7 @@
 #include "../matrix/sparseMatrix.h"
 #include "../cBlas/cblas.h"
 
-
-
+// Wall time in linux
 double wtime();
 
 /**
@@ -79,7 +78,17 @@ double stopCriterionSparse (const SMAT * A, double *z);
  */
 double* gaussianVector(int size);
 
+/**
+ * Computes the least-squares error of the ||Ax - b ||_2
+ * A is sparse
+ *
+ */
 double lsErrorSparse(const SMAT* A, const double* x, const double* b);
+
+/**
+ * Computes the least-squares error of the ||Ax - b ||_2
+ *
+ */
 double lsError(const MAT* A, const double* x, const double* b);
 
 
