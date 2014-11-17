@@ -25,8 +25,12 @@ to a uniform random variable on [0,1] in constant time and linear time preproces
 of a given distribution in constant time. We use an implementation of W. D. Smith and Keith Schwarz (htiek@cs.stanford.edu) for C and Java, respectively.
 
 <h2>
-Installation instructions for C
+Installation instructions
 </h2>
+
+<h3>
+C
+</h3>
 
 Clone the project. Move to the C directory, and then type
 
@@ -37,9 +41,9 @@ Clone the project. Move to the C directory, and then type
 The above code runs a simple instance of least-squares for a gaussian random matrix A and gaussian vector b. See 'main.c' for more details.
 
 
-<h2>
-Installation instructions for Java
-</h2>
+<h3>
+Java
+</h3>
 
 Clone the project. Move to the Java directory, and then type
 
@@ -47,9 +51,9 @@ Clone the project. Move to the Java directory, and then type
 
 To run a few simple tests. See `TestREKSolverIT.java` for an example how to use the REK least-squares solver.
 
-<h2>
-Installation instructions for MATLAB
-</h2>
+<h3>
+MATLAB
+</h3>
 This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
 <code>
