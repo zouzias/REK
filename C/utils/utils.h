@@ -39,8 +39,23 @@ double residError(const MAT * A, double *x, const double *b, const double *z);
 double residErrorSparse(const SMAT * A, const double *x, const double *b,
 		const double *z);
 
+
+/**
+ * Computes y = y + A * x. Overwrites the result on y.
+ *
+ * @param  A (Input) Dense matrix
+ * @param  x (Input) Vector
+ * @param  y (Input/Output) Vector
+ */
 void myDGEMV(const MAT* A, const double* x, double* y);
 
+/**
+ * Computes y = y + A * x. Overwrites the result on y.
+ *
+ * @param  A (Input) Sparse matrix
+ * @param  x (Input) Vector
+ * @param  y (Input/Output) Vector
+ */
 void myDGEMVSparse(const SMAT* A, const double* x, double* y);
 
 /**

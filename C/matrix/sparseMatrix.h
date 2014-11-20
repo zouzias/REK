@@ -67,9 +67,15 @@ void computeRowNorms(const SMAT * A, double *prob);
  */
 void computeColNormsSparse(const SMAT * A, double *prob);
 
+/**
+ * Generates an m x n sparse random Gaussian matrix with density. Non-zero entries are selected randomly.
+ *
+ * @param  m (Input) Number of rows.
+ * @param  n (Input) Number of columns.
+ * @param  density (Input) Fraction of non-zero random entries.
+ * @return  A sparse matrix stored as struct sparseMat.
+ */
 SMAT* fillSparseMat(int m, int n, double density);
-
-void printSparseMat(const SMAT* A);
 
 #endif /* SPARSEMATRIX_H_ */
 
