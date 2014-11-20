@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-c -Wall -g 
+CFLAGS=-c -Wall -O2 
 
 all: REK
 

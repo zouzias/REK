@@ -29,7 +29,7 @@ int main() {
     int m = 5000, n = 500;
     
     // Maximum number of iterations
-    double TOL = 10e-5;
+    double TOL = 10e-8;
     
     // Sparsity parameter
     double sparsity = 0.25;
