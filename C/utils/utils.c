@@ -83,7 +83,7 @@ void myDGEMVSparse(const SMAT* A, const double* x, double* y) {
 
 
 double* gaussianVector(int size){
-    double* vector = malloc(size * sizeof(double));
+    double* vector = (double*) malloc(size * sizeof(double));
     
     for (int i = 0; i < size; i++){
         vector[i] = ((double) rand() / (RAND_MAX + 1.0));
@@ -94,7 +94,7 @@ double* gaussianVector(int size){
 
 double lsErrorSparse(const SMAT* A, const double* x, const double* b){
     double error = 0.0;
-    double* residVector = malloc(A->m * sizeof(double));
+    double* residVector = (double*) malloc(A->m * sizeof(double));
     
     for (int i = 0 ; i < A->m; i++){
         residVector[i] = - b[i];
@@ -111,7 +111,7 @@ double lsErrorSparse(const SMAT* A, const double* x, const double* b){
 
 double lsError(const MAT* A, const double* x, const double* b){
     double error = 0.0;
-    double* residVector = malloc(A->m * sizeof(double));
+    double* residVector = (double*) malloc(A->m * sizeof(double));
     
     for (int i = 0 ; i < A->m; i++){
         residVector[i] = - b[i];

@@ -51,7 +51,7 @@ MAT* fillRandomEntries(int m, int n) {
     int i, j;
     double MAX_NUM = 100;
     
-    MAT *A = malloc(sizeof(MAT));
+    MAT *A = (MAT*) malloc(sizeof(MAT));
     A->m = m;
     A->n = n;
     A->val = (double *) malloc(m * n * sizeof(double));
