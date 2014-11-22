@@ -4,7 +4,6 @@ import org.zouzias.vector.DoubleVector;
 
 /** Interface for a matrix with double entries.
  *
- * @author azo
  */
 public interface DoubleMatrix {
 

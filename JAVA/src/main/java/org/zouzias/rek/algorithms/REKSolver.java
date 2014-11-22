@@ -9,7 +9,6 @@ import org.zouzias.vector.DoubleVector;
  * Implementation of the randomized extended Kaczmarz method as in [1]. Alias method is used for 
  * non-uniform sampling (see AliasMethod class).
  *
- * @author azo
  */
 public class REKSolver implements LeastSquaresSolver {
     

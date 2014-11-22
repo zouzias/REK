@@ -6,7 +6,6 @@ import org.zouzias.BLAS.BLASLevelOne;
 
 /**
  *
- * @author azo
  */
 public abstract class DoubleVector implements BLASLevelOne {
 

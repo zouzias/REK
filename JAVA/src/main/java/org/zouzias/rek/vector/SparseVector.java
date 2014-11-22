@@ -9,7 +9,6 @@ import org.zouzias.utils.NAUtils;
 /** 
  * An implementation of a sparse vector
  *
- * @author azo
  */
 public final class SparseVector extends DoubleVector {
 

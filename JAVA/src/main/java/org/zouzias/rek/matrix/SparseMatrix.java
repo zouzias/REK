@@ -14,7 +14,6 @@ import org.zouzias.vector.SparseVector;
  * on the randomized Extended Kaczmarz method. It uses stores the matrix in terms of rows 
  * and columns. It requires twice the space needed for storing a matrix since each (i,j) entry can
  * be access via rows.get(i).get(j) and columns.get(j).get(i). 
- * @author azo
  */
 public class SparseMatrix implements DoubleMatrix {
 

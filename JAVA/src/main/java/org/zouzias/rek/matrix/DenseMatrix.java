@@ -14,7 +14,6 @@ import org.zouzias.vector.DoubleVector;
  * and columns. It requires twice the space needed for storing a matrix since each (i,j) entry can
  * be access via rows.get(i).get(j) and columns.get(j).get(i). 
  *
- * @author azo
  */
 public final class DenseMatrix implements DoubleMatrix {
     /**

@@ -3,7 +3,6 @@ package org.zouzias.utils;
 /**
  * Numerical analysis tricks (for computing norms)
  *
- * @author azo
  */
 public class NAUtils {
     

@@ -6,7 +6,6 @@ import org.zouzias.utils.NAUtils;
 
 /** Implementation of a dense vector
  *
- * @author azo
  */
 public final class DenseVector extends DoubleVector {
 

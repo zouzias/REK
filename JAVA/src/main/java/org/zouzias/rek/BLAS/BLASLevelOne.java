@@ -5,7 +5,6 @@ import org.zouzias.vector.DoubleVector;
 /**
  * Basic Linear Algebra Operations (Level 1)
  *
- * @author azo
  */
 public interface BLASLevelOne {
 

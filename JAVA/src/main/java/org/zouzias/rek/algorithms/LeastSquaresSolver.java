@@ -6,7 +6,6 @@ import org.zouzias.vector.DoubleVector;
 /** Interface for Least Squares Solvers. Given a real matrix A and real vector b, solves the problem
  *  min ||Ax - b|| so that x has the minimum Euclidean norm.
  *
- * @author azo
  */
 public interface LeastSquaresSolver {
     
