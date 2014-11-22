@@ -41,7 +41,7 @@ double residErrorSparse(const SMAT * A, const double *x, const double *b,
 
 
 /**
- * Computes y = y + A * x. Overwrites the result on y.
+ * Computes y = y + A * x. Overwrites the result on vector y.
  *
  * @param  A (Input) Dense matrix
  * @param  x (Input) Vector
@@ -50,7 +50,7 @@ double residErrorSparse(const SMAT * A, const double *x, const double *b,
 void myDGEMV(const MAT* A, const double* x, double* y);
 
 /**
- * Computes y = y + A * x. Overwrites the result on y.
+ * Computes y = y + A * x. Overwrites the result on vector y.
  *
  * @param  A (Input) Sparse matrix
  * @param  x (Input) Vector
@@ -67,8 +67,12 @@ void myDGEMVSparse(const SMAT* A, const double* x, double* y);
 double* gaussianVector(int size);
 
 /**
- * Computes the least-squares error of the ||Ax - b ||_2
- * A is sparse
+ * Computes the least-squares error of the ||Ax - b ||_2 with A sparse
+ 
+ * @param  A (Input) Sparse matrix of size m x n
+ * @param  x (Input) Unknown vector of size n
+ * @param  b (Input) Right hand side vector of size m
+ * @return The Euclidean norm of the vector A * x - b
  *
  */
 double lsErrorSparse(const SMAT* A, const double* x, const double* b);
@@ -76,6 +80,11 @@ double lsErrorSparse(const SMAT* A, const double* x, const double* b);
 /**
  * Computes the least-squares error of the ||Ax - b ||_2
  *
+ * @param  A (Input) Dense m x n matrix 
+ * @param  x (Input) Unknown vector of size n
+ * @param  b (Input) Right hand side vector of size m
+ * @return The Euclidean norm of the vector A * x - b
+*
  */
 double lsError(const MAT* A, const double* x, const double* b);
 
