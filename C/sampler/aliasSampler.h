@@ -13,7 +13,9 @@
 
 // Needed for Walker sampling
 #define real double
-#define uint unsigned int
+#ifndef uint
+#define uint unsigned
+#endif
 
 
 struct aliasStruct
