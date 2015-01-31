@@ -4,7 +4,7 @@
 unsigned int BLOCKSIZE = 1000;
 
 /*!< Maximum number of iterations */
-unsigned int MAXITERS = 10e4;
+unsigned int MAXITERS = 10e6;
 
 
 void denseREKBLAS (MAT * A, double *x, const double *b, double TOL){
