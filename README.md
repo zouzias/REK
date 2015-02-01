@@ -7,7 +7,7 @@ The current project contains an implementation of the algorithm described in the
 <br>
 SIAM. J. Matrix Anal. & Appl., 34(2), 773–793. (21 pages) 
 <br>
-Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
+Authors: [Anastasios Zouzias](https://github.com/zouzias) and Nikolaos Freris 
 <br>
 <h2>
 Overview
@@ -55,28 +55,14 @@ Clone the project. Move to the Java directory, and then type
 
 To run a few simple tests. See `TestREKSolverIT.java` for an example how to use the REK least-squares solver.
 
-
-
-<h2>
-Copyright and licensing information
-</h2>
-
-See LICENSE file.
-
 <h2>
 Contact information for the distributor or programmer
 </h2>
 
 <h2>
-Known Bugs
+Bugs
 </h2>
-* Improve stopping rule for sparse case.
-
-<h2>
-Troubleshooting
-</h2>
-
-N/A
+Please report bugs by opening a new [issue](https://github.com/zouzias/REK/issues/new).
 
 <h2>
 Credits and acknowledgments
@@ -87,13 +73,3 @@ Credits go to Warren D. Smith and Keith Schwarz for implementing the aliasing me
 [Vos91] M. D. Vose. A Linear Algorithm for Generating Random Numbers with a given Distribution. 
 <br>
 IEEE Trans. Softw. Eng., 17(9):972–975, September 1991.
-
-
-<h3> Developer/contact </h3>
-[Anastasios Zouzias](http://www.cs.toronto.edu/~zouzias/)
-<br>
-Dept. of Computer Science
-<br>
-University of Toronto
-<br>
-Toronto, Canada
