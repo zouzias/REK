@@ -10,14 +10,12 @@ SIAM. J. Matrix Anal. & Appl., 34(2), 773–793. (21 pages)
 <br>
 Authors: [Anastasios Zouzias](https://github.com/zouzias) and Nikolaos Freris 
 <br>
-<hr>
-<h2>
-Installation
-</h2>
-
 <h3>
-C
+Installation
 </h3>
+<h4>
+C
+</h4>
 
 Clone the project. Move to the C directory, and then type
 
@@ -26,11 +24,9 @@ Clone the project. Move to the C directory, and then type
 <code>./REK</code>
 
 The above code runs a simple instance of least-squares for a gaussian random matrix A and gaussian vector b. See 'main.c' for more details.
-
-
-<h3>
+<h4>
 Java
-</h3>
+</h4>
 
 Clone the project. Move to the Java directory, and then type
 
@@ -38,18 +34,14 @@ Clone the project. Move to the Java directory, and then type
 
 To run a few simple tests. See `TestREKSolverIT.java` for an example how to use the REK least-squares solver.
 
-
-<hr>
-<h3>
+<h4>
 Bugs
-</h3>
+</h4>
 Please report bugs by opening a new [issue](https://github.com/zouzias/REK/issues/new).
 
-<hr>
-
-<h3>
+<h4>
 Implementation Details
-</h3>
+</h4>
 The algorithm (REK-BLAS) has been implemented in C and Java. REK-BLAS is an implementation of REK with two additional technical features. First, REK-BLAS utilizes level-1 BLAS routines for 
 all operations of REK and second REK-BLAS additionally stores explicitly the transpose of A for more efficiently 
 memory access of both the rows and columns of A using BLAS (see the above paper for more details). 
