@@ -1,7 +1,7 @@
 <h2> Randomized Extended Kaczmarz</h2>
 Java: <img src="https://travis-ci.org/zouzias/REK.svg?branch=master"/>
 <h3> Overview </h3>
-The current project contains implementations of the algorithm described in the following research paper:
+The current project contains an implementation of the algorithm described in the research paper:
 <br>
 [<b>Randomized Extended Kaczmarz for Solving Least-Squares.</b>](http://dx.doi.org/10.1137/120889897)
 <br>
@@ -9,6 +9,10 @@ SIAM. J. Matrix Anal. & Appl., 34(2), 773–793. (21 pages)
 <br>
 Authors: <b>Anastasios Zouzias</b> and <b>Nikolaos Freris</b> 
 <br>
+<h2>
+Overview
+</h2>
+The Randomized Extended Kaczmarz algorithm is a randomized algorithm for solving least-squares/linear regression problems. The current project provides implementations of REK in C, Java and Matlab (wriiten in C with mex-files integrations).
 
 <h2>
 Implementation Details
@@ -51,56 +55,7 @@ Clone the project. Move to the Java directory, and then type
 
 To run a few simple tests. See `TestREKSolverIT.java` for an example how to use the REK least-squares solver.
 
-<h3>
-MATLAB
-</h3>
-This program requires MATLAB under Linux enviroment for testing. To run the randomized extended Kaczmarz (REK-BLAS) algorithm, type
 
-<code>
-compileMe
-</code>
-
-under your MATLAB enviroment. This MATLAB script will compile the mex implementation of REK-BLAS. Then, type
-
-<code>
-plotResults
-</code>
-
-under MATLAB to plot a sample execution (adjust the diemsionality of m, n depending on your CPU specs).
-
-<p>
-After compilation, you can execute the <b>randomized extended Kaczmarz</b> using the following command:
-
-<code>
-[x, dt] = REKBLAS_mex(A, b, TOL);
-</code>
-
-where the <b>input/output</b> parameters are : 
-
-+ A        - <b>(Input) An m x n real matrix
-+ b        - <b>(Input) An m dimensional vector
-+ TOL      - <b>(Input) Tolerance parameter
-+ x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-+ dt       - <b>(Output) Elapsed time using Unix routine ftime()
-
-<h2>
-Operating instructions
-</h2>
-
-The current implementation has been tested under Linux running MATLAB 7.9 with GCC 4.7.2.
-
-<h2>
-A file manifest (list of files included)
-</h2>
-
-* AliasSampler.{c,h} - <b> Alias sampling method for finite distributions</b>
-* compileMe.m        - <b> Compile project under MATLAB </b>
-* REKBLAS.{c,h}      - <b> Main Source files (implement the algorithm) </b>
-* REKBLAS_mex.{c,h}  - <b> Wrapper for MATLAB using Mex technology </b>
-* types.h            - <b> Useful structures </b>
-* utils.{c,h}        - <b> Utilities </b>
-* plotResults.m      - <b> Plot results in MATLAB </b>
-* testREK.m          - <b> Auxiliary MATLAB script </b>
 
 <h2>
 Copyright and licensing information
