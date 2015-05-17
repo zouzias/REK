@@ -68,7 +68,7 @@ public:
 	 *
 	 * @param x
 	 */
-	virtual void minus(DoubleVector& x)  = 0;
+	virtual void minus(const DoubleVector& x)  = 0;
 
 	/** Represent the vector as a list
 	 *

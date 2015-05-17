@@ -1,5 +1,6 @@
 
 #include "DoubleVector.hpp"
+#include <assert.h>
 #include <vector>
 
 
@@ -39,7 +40,7 @@ public:
 
 	void scale(double alpha);
 
-	void minus(DoubleVector& x);
+	void minus(const DoubleVector& x);
 
 	std::vector<double>& asList();
 };
