@@ -5,11 +5,9 @@
 
 #include <vector>
 
-#include "../BLAS/BLASLevelOne.hpp"
-
 using namespace std;
 
-class DoubleVector : public BLASLevelOne{
+class DoubleVector{
 
 protected:
 	const static int DEFAULT_SIZE = 10;
