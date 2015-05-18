@@ -8,7 +8,6 @@ class DenseVector : public DoubleVector {
 
 private:
 
-const static int DEFAULT_SIZE = 10;
 vector<double> vector_;
 
 public:

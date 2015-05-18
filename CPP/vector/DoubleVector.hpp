@@ -11,6 +11,8 @@ using namespace std;
 
 class DoubleVector : public BLASLevelOne{
 
+protected:
+	const static int DEFAULT_SIZE = 10;
 public:
 
 	DoubleVector();

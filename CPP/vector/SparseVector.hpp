@@ -2,12 +2,25 @@
 #define SPARSEVECTOR_HPP_
 
 #include "DoubleVector.hpp"
+#include <random>
+#include <map>
 
 class DoubleVector;
 
 class SparseVector: public DoubleVector{
+private:
 
-	public:
+std::map<int, double> _values;
+int _size;
+
+typedef std::map<int, double>::iterator values_iter;
+
+
+public:
+
+	SparseVector(): _values(){
+		_size = DEFAULT_SIZE;
+	};
 
 	void random();
 
@@ -19,9 +32,9 @@ class SparseVector: public DoubleVector{
 
 	void scale(double alpha);
 
-	void minus(DoubleVector& x);
+	void minus(const DoubleVector& x);
 
-	vector<double>& asList();
+	std::vector<double>& asList();
 };
 
 #endif
