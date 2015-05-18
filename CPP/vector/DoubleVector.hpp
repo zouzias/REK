@@ -13,9 +13,11 @@ class DoubleVector : public BLASLevelOne{
 
 protected:
 	const static int DEFAULT_SIZE = 10;
+	int _size;
 public:
 
 	DoubleVector();
+	DoubleVector(int size);
 
 	double DNRM2();
 

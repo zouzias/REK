@@ -8,10 +8,21 @@
 #include "DoubleVector.hpp"
 
 		DoubleVector::DoubleVector(){
+			_size = DEFAULT_SIZE;
+		};
+
+		DoubleVector::DoubleVector(int size){
+			_size = size;
 		};
 
 		double DoubleVector::DNRM2(){
-			return 0.0;
+			double nrm2 = 0.0;
+
+			for(int i = 0; i < _size; i++){
+				nrm2 += get(i) * get(i);
+			}
+
+			return nrm2;
 		};
 
     /**
@@ -21,7 +32,9 @@
      * @param x
      */
     void DoubleVector::DAXPY(double alpha, const DoubleVector& x){
-
+			for(int i = 0; i < _size; i++){
+				set(i, get(i) + alpha * x.get(i));
+			}
     };
 
     /**
@@ -31,5 +44,12 @@
      * @return
      */
     double DoubleVector::DDOT(const DoubleVector& x){
-    	return 0.0;
+			double value = 0.0;
+			if ( _size != x.size())
+				return 0.0;
+
+			for( int i = 0 ; i < _size; i++){
+				value += get(i) * x.get(i);
+			}
+    	return value;
     };

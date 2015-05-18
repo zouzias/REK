@@ -11,14 +11,14 @@ class SparseVector: public DoubleVector{
 private:
 
 std::map<int, double> _values;
-int _size;
-
 typedef std::map<int, double>::iterator values_iter;
 
 public:
 
-	SparseVector(): _values(){
-		_size = DEFAULT_SIZE;
+	SparseVector(): DoubleVector(DEFAULT_SIZE), _values(){
+	};
+
+	SparseVector(int size): DoubleVector(size), _values(){
 	};
 
 	void random();

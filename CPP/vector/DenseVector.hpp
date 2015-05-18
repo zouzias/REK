@@ -10,10 +10,10 @@ std::vector<double> _vector;
 
 public:
 
-	DenseVector(): _vector(DEFAULT_SIZE){
+	DenseVector(): DoubleVector(DEFAULT_SIZE), _vector(DEFAULT_SIZE){
 	};
 
-	DenseVector(int size): _vector(size){
+	DenseVector(int size): DoubleVector(size), _vector(size){
 	};
 
 	DenseVector(const DoubleVector& vec): _vector(vec.size()){
