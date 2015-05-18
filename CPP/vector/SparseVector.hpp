@@ -15,7 +15,6 @@ int _size;
 
 typedef std::map<int, double>::iterator values_iter;
 
-
 public:
 
 	SparseVector(): _values(){

@@ -8,39 +8,36 @@
 #include "DenseVector.hpp"
 
 void DenseVector::random(){
-	for(int i = 0; i < vector_.size(); i++){
-		vector_[i] = (double)rand() / RAND_MAX;
+	for(int i = 0; i < _vector.size(); i++){
+		_vector[i] = (double)rand() / RAND_MAX;
 	}
 };
 
-
 int DenseVector::size() const{
-	return vector_.size();
+	return _vector.size();
 };
 
 double DenseVector::get(int index) const{
-	return vector_[index];
+	return _vector[index];
 };
 
-
 void DenseVector::set(int index, double value){
-	vector_[index] = value;
+	_vector[index] = value;
 };
 
 void DenseVector::scale(double alpha){
-	for(int i = 0; i < vector_.size(); i++){
-		vector_[i] *= alpha;
+	for(int i = 0; i < _vector.size(); i++){
+		_vector[i] *= alpha;
 	}
 };
 
-
 void DenseVector::minus(const DoubleVector& x){
-	assert(vector_.size() == x.size());
-	for(int i = 0; i < vector_.size(); i++){
-		vector_[i] -= x.get(i);
+	assert(_vector.size() == x.size());
+	for(int i = 0; i < _vector.size(); i++){
+		_vector[i] -= x.get(i);
 	}
 };
 
 std::vector<double>& DenseVector::asList(){
-	return vector_;
+	return _vector;
 };

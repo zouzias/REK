@@ -1,12 +1,10 @@
 #include "SparseVector.hpp"
 
-
 void SparseVector::random(){
 	for(int i = 0; i < _size; i++){
 		_values[i] = (double)rand() / RAND_MAX;
 	}
 };
-
 
 int SparseVector::size() const{
 	return _size;
@@ -21,10 +19,8 @@ double SparseVector::get(int index) const{
 	}
 };
 
-
 void SparseVector::set(int index, double value){
 	_values[index] = value;
-
 };
 
 void SparseVector::scale(double alpha){
@@ -32,7 +28,6 @@ void SparseVector::scale(double alpha){
 			iter->second *= alpha;
 	}
 };
-
 
 void SparseVector::minus(const DoubleVector& x){
 	for(int i = 0; i < _size; i++){
@@ -46,7 +41,6 @@ std::vector<double>& SparseVector::asList(){
 	for( int i = 0 ; i < _size; i++){
 		(*vec)[i] = get(i);
 	}
-
 
 	return *vec;
 };

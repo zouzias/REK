@@ -17,7 +17,6 @@ public:
 
 	DoubleVector();
 
-
 	double DNRM2();
 
 	/**

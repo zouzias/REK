@@ -3,28 +3,24 @@
 #include <assert.h>
 #include <vector>
 
-
 class DenseVector : public DoubleVector {
 
 private:
-
-vector<double> vector_;
+std::vector<double> _vector;
 
 public:
 
-	DenseVector(): vector_(DEFAULT_SIZE){
+	DenseVector(): _vector(DEFAULT_SIZE){
 	};
 
-	DenseVector(int size): vector_(size){
+	DenseVector(int size): _vector(size){
 	};
 
-	// Copy constructor
-	DenseVector(const DoubleVector& vec): vector_(vec.size()){
-		for (int i = 0; i < vector_.size(); i++){
-			vector_[i] = vec.get(i);
+	DenseVector(const DoubleVector& vec): _vector(vec.size()){
+		for (int i = 0; i < _vector.size(); i++){
+			_vector[i] = vec.get(i);
 		}
 	};
-
 
 	~DenseVector(){
 	};

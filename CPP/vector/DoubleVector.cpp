@@ -7,13 +7,12 @@
 
 #include "DoubleVector.hpp"
 
-	DoubleVector::DoubleVector(){
+		DoubleVector::DoubleVector(){
+		};
 
-	};
-
- 	 double DoubleVector::DNRM2(){
- 		 return 0.0;
- 	 };
+		double DoubleVector::DNRM2(){
+			return 0.0;
+		};
 
     /**
      * DAXPY operation y <- y + alpha * x
