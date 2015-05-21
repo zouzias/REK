@@ -10,6 +10,7 @@
 
 #include<vector>
 #include<assert.h>
+#include<stdlib.h>
 #include "../vector/DoubleVector.hpp"
 
 // Needed for Walker sampling

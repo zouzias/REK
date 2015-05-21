@@ -1,5 +1,5 @@
-#CXX=g++
-CXXFLAGS =	-O2 -g -Wall -fmessage-length=0
+CXX=g++
+CXXFLAGS =	-O2 -g -Wall -std=gnu++0x
 
 OBJS =		REK-CPP.o vector/DoubleVector.o \
 					vector/SparseVector.o vector/DenseVector.o \

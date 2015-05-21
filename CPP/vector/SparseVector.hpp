@@ -3,6 +3,7 @@
 
 #include "DoubleVector.hpp"
 #include <random>
+#include <stdlib.h>
 #include <map>
 
 class DoubleVector;
