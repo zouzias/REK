@@ -8,9 +8,9 @@
 #ifndef REKSOLVER_HPP_
 #define REKSOLVER_HPP_
 
-#include "LeastSquaresSolver.hpp"
+#include "../matrix/DoubleMatrix.hpp"
 
-class REKSolver : public LeastSquaresSolver{
+class REKSolver{
 
 public:
 
@@ -18,8 +18,8 @@ public:
 
 	}
 
-	DoubleVector& solve(DoubleMatrix& A, DoubleVector& b, double MaxSeconds);
-	DoubleVector& solve(DoubleMatrix& A, DoubleVector& b, long MaxIterations);
+	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, double MaxSeconds);
+	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations);
 };
 
 
