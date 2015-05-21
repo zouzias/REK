@@ -1,10 +1,3 @@
-/*
- * DoubleMatrix.hpp
- *
- *  Created on: May 4, 2015
- *      Author: zouzias
- */
-
 #ifndef DOUBLEMATRIX_HPP_
 #define DOUBLEMATRIX_HPP_
 
@@ -13,8 +6,27 @@ class DoubleVector;
 
 class DoubleMatrix{
 
+protected:
+  int m, n;
+
+  const static int DEFAULT_SIZE = 10;
 public:
 
+    DoubleMatrix(){
+      this->m = DEFAULT_SIZE;
+      this->n = DEFAULT_SIZE;
+    };
+
+
+    DoubleMatrix(int m, int n){
+      this->m = m;
+      this->n = n;
+    };
+
+
+    virtual ~DoubleMatrix(){
+
+    };
 
 	/**
      * Fill in the entries with random values
@@ -58,7 +70,7 @@ public:
      *
      * @return A vector of size equal to the number of rows containing the above probability distribution.
      */
-    virtual DoubleVector& rowNorms()  const = 0;
+    virtual DoubleVector* rowNorms()  const = 0;
 
     /**
      * Compute a distribution over the columns. Namely, the j-th column A(j) has probability mass
@@ -66,7 +78,7 @@ public:
      *
      * @return A vector of size equal to the number of column containing the above probability distribution.
      */
-    virtual DoubleVector& columnNorms()  const = 0;
+    virtual DoubleVector* columnNorms()  const = 0;
 
     /**
      * Computes y = A * x
@@ -74,7 +86,7 @@ public:
      * @param x
      * @return y
      */
-    virtual DoubleVector& times(const DoubleVector& x) const; // y = A * x
+    virtual DoubleVector* times(const DoubleVector& x) const = 0; // y = A * x
 
     /**
      * Frobenius norm of a matrix A, i.e., normF(A)= sqrt(sum_{i,j} A(i,j)^2)
