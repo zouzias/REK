@@ -25,24 +25,12 @@
 			return nrm2;
 		};
 
-    /**
-     * DAXPY operation y <- y + alpha * x
-     *
-     * @param alpha
-     * @param x
-     */
     void DoubleVector::DAXPY(double alpha, const DoubleVector& x){
 			for(int i = 0; i < _size; i++){
 				set(i, get(i) + alpha * x.get(i));
 			}
     };
 
-    /**
-     * Dot product with vector x
-     *
-     * @param x
-     * @return
-     */
     double DoubleVector::DDOT(const DoubleVector& x){
 			double value = 0.0;
 			if ( _size != x.size())
@@ -53,3 +41,17 @@
 			}
     	return value;
     };
+
+		void DoubleVector::minus(const DoubleVector& x){
+			this->DAXPY(-1, x);
+		};
+
+		std::vector<double>* DoubleVector::asVector(){
+			std::vector<double>* vec = new std::vector<double>(size());
+
+			for ( int i = 0; i < vec->size(); i++){
+				(*vec)[i] = get(i);
+			}
+
+			return vec;
+		};

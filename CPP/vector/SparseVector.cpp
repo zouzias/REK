@@ -34,13 +34,3 @@ void SparseVector::minus(const DoubleVector& x){
 		_values[i] = get(i) - x.get(i);
 	}
 };
-
-std::vector<double>& SparseVector::asList(){
-	std::vector<double>* vec = new std::vector<double>(_size);
-
-	for( int i = 0 ; i < _size; i++){
-		(*vec)[i] = get(i);
-	}
-
-	return *vec;
-};

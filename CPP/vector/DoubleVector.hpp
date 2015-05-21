@@ -16,6 +16,8 @@ public:
 
 	DoubleVector();
 	DoubleVector(int size);
+	virtual ~DoubleVector(){
+	};
 
 	double DNRM2();
 
@@ -69,13 +71,10 @@ public:
 	 *
 	 * @param x
 	 */
-	virtual void minus(const DoubleVector& x)  = 0;
+	virtual void minus(const DoubleVector& x);
 
-	/** Represent the vector as a list
-	 *
-	 * @return
-	 */
-	virtual vector<double>& asList()  = 0;
+	virtual std::vector<double>* asVector();
+
 };
 
 #endif

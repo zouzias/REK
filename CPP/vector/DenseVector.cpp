@@ -37,7 +37,3 @@ void DenseVector::minus(const DoubleVector& x){
 		_vector[i] -= x.get(i);
 	}
 };
-
-std::vector<double>& DenseVector::asList(){
-	return _vector;
-};

@@ -21,6 +21,9 @@ public:
 	SparseVector(int size): DoubleVector(size), _values(){
 	};
 
+	~SparseVector(){
+	};
+
 	void random();
 
 	int size() const;
@@ -33,7 +36,6 @@ public:
 
 	void minus(const DoubleVector& x);
 
-	std::vector<double>& asList();
 };
 
 #endif

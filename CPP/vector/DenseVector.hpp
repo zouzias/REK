@@ -1,4 +1,8 @@
 
+#ifndef DENSEVECTOR_HPP_
+#define DENSEVECTOR_HPP_
+
+
 #include "DoubleVector.hpp"
 #include <assert.h>
 #include <vector>
@@ -36,6 +40,6 @@ public:
 	void scale(double alpha);
 
 	void minus(const DoubleVector& x);
-
-	std::vector<double>& asList();
 };
+
+#endif
