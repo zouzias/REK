@@ -1,7 +1,10 @@
-CXX=g++
+#CXX=g++
 CXXFLAGS =	-O2 -g -Wall -fmessage-length=0
 
-OBJS =		REK-CPP.o vector/DoubleVector.o vector/SparseVector.o vector/DenseVector.o matrix/impl/DenseMatrix.o matrix/impl/SparseMatrix.o matrix/DoubleMatrix.o algorithms/LeastSquaresSolver.o algorithms/REKSolver.o
+OBJS =		REK-CPP.o vector/DoubleVector.o \
+					vector/SparseVector.o vector/DenseVector.o \
+					matrix/DoubleMatrix.o matrix/impl/DenseMatrix.o matrix/impl/SparseMatrix.o \
+					algorithms/REKSolver.o samplers/AliasSampler.o
 
 LIBS = -lm
 
