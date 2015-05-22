@@ -24,7 +24,7 @@ class AliasSampler{
 
 private:
 
-  int n;
+  int N;
   std::vector<uint> A;
   std::vector<uint> B;
   std::vector<double> Y;
@@ -39,18 +39,18 @@ public:
     uint j;
     double sum = 0;
 
-    this->n = probs.size();
-    this->A = *new std::vector<uint>(n + 2);
-    this->B = *new std::vector<uint>(n + 2);
-    this->Y = *new std::vector<double>(n + 2);
+    this->N = probs.size();
+    this->A = *new std::vector<uint>(N + 2);
+    this->B = *new std::vector<uint>(N + 2);
+    this->Y = *new std::vector<double>(N + 2);
 
-    for (j = 0; j < n; j++)
+    for (j = 0; j < N; j++)
         sum += probs[j];
 
     sum = 1 / sum;
 
     // Normalize it now
-    for (j = 0; j < n; j++)
+    for (j = 0; j < N; j++)
         Y[j + 1] = probs[j] * sum;
 
   };
@@ -60,18 +60,18 @@ public:
     uint j;
     double sum = 0;
 
-    this->n = probs.size();
-    this->A = *new std::vector<uint>(n + 2);
-    this->B = *new std::vector<uint>(n + 2);
-    this->Y = *new std::vector<double>(n + 2);
+    this->N = probs.size();
+    this->A = *new std::vector<uint>(N + 2);
+    this->B = *new std::vector<uint>(N + 2);
+    this->Y = *new std::vector<double>(N + 2);
 
-    for (j = 0; j < n; j++)
+    for (j = 0; j < N; j++)
         sum += probs.get(j);
 
     sum = 1 / sum;
 
     // Normalize it now
-    for (j = 0; j < n; j++)
+    for (j = 0; j < N; j++)
         Y[j + 1] = probs.get(j) * sum;
 
   };
@@ -88,7 +88,6 @@ public:
 
   void initSampler(){
     uint i, j, k;
-    int N = n;
     assert(1 <= N);
     for (i = 1; i <= N; i++) {
         A[i] = i;
@@ -144,7 +143,7 @@ public:
     uint i;
     real r;
     /* Let i = random uniform integer from {1,2,...N};  */
-    i = 1 + (uint) (n * drand48());
+    i = 1 + (uint) ((N - 1) * drand48());
     r = drand48();
     if (r > Y[i])
         i = A[i];
