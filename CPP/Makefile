@@ -15,5 +15,15 @@ $(TARGET):	$(OBJS)
 
 all:	$(TARGET)
 
+
+test: testSampler
+
+testSampler: testSampler.o samplers/AliasSampler.o
+	$(CXX) -c testSampler.cpp
+	$(CXX) -o testSampler testSampler.o samplers/AliasSampler.o $(LIBS)
+	./testSampler
+	
+
+
 clean:
 	rm -f $(OBJS) $(TARGET) *.o
