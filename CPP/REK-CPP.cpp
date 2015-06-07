@@ -18,29 +18,10 @@
 using namespace std;
 
 int main(void) {
-
-
 	int n = 10;
-	std::vector<double> test(n);
 
-	test[0] = n;
-	for(int i = 1; i <n ; i++){
-		test[i] = 1;
-	}
-
-	AliasSampler alias(test);
-
-	alias.initSampler();
-
-
-	std::vector<uint>* samples = alias.sample(30);
-
-	for(int i = 0 ; i < samples->size(); i++){
-		cout<<"Sample " << samples->at(i) << endl;
-	}
-
-	DoubleMatrix* A = new DenseMatrix(10,10);
-	DoubleVector* xopt = new DenseVector(10);
+	DoubleMatrix* A = new DenseMatrix(n,n);
+	DoubleVector* xopt = new DenseVector(n);
 	xopt->random();
 	A->random();
 	DoubleVector* b = A->times(*xopt);
@@ -55,7 +36,7 @@ int main(void) {
 		cout<< b->get(i) <<endl;
 	}
 
-	cout<< "B is " <<endl;
+	cout<< "A is " <<endl;
 	for (int i = 0 ; i < A->getRowDimension(); i++){
 		for (int j = 0 ; j < A->getColumnDimension(); j++){
 		cout<< A->get(i,j)<< " , ";
@@ -63,17 +44,19 @@ int main(void) {
 		cout<<endl;
 	}
 
-
 	REKSolver solver = REKSolver();
 
-	long ITERS = 1000;
+	long ITERS = 10000000;
 	DoubleVector* x = solver.solve(*A, *b, ITERS);
 
+	cout<<"(x, xopt)"<<endl;
+	for (int j = 0 ; j < A->getColumnDimension(); j++){
+		cout<< x->get(j) << " , " << xopt->get(j) <<endl;
+	}
 
 	x->minus(*xopt);
-	cout<< "Error is " << x->DNRM2();
+	cout<< "Error is " << x->DNRM2() << endl;
 
 
-	cout<<"Hello World" <<endl;
 	return 0;
 }
