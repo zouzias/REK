@@ -1,0 +1,4 @@
+*.o
+REK-CPP
+**/*.o
+testSampler
