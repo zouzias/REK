@@ -10,7 +10,6 @@
 
 #include "../DoubleMatrix.hpp"
 #include "../../vector/DenseVector.hpp"
-#include<cmath>
 
 class DenseMatrix : public DoubleMatrix {
 

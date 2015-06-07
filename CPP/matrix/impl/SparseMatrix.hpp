@@ -42,6 +42,9 @@ public:
 	};
 
 	virtual void random(){
+		/* initialize random seed: */
+		srand (time(NULL));
+
 		for (int i = 0, m = _rows.size(); i < m; i++){
 			for (int j = 0, n = _columns.size(); j < n; j++) {
 				double val = (double)rand() / RAND_MAX;
