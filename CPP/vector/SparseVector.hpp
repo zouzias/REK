@@ -3,6 +3,7 @@
 
 #include "DoubleVector.hpp"
 #include <random>
+#include <time.h>
 #include <stdlib.h>
 #include <map>
 

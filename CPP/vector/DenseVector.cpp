@@ -8,6 +8,9 @@
 #include "DenseVector.hpp"
 
 void DenseVector::random(){
+	/* initialize random seed: */
+	srand (time(NULL));
+
 	for(int i = 0; i < _vector.size(); i++){
 		_vector[i] = (double)rand() / RAND_MAX;
 	}

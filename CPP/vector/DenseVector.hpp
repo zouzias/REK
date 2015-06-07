@@ -6,6 +6,7 @@
 #include "DoubleVector.hpp"
 #include <assert.h>
 #include <stdlib.h>
+#include <time.h>
 #include <vector>
 
 class DenseVector : public DoubleVector {

@@ -1,6 +1,9 @@
 #include "SparseVector.hpp"
 
 void SparseVector::random(){
+	/* initialize random seed: */
+	srand (time(NULL));
+
 	for(int i = 0; i < _size; i++){
 		_values[i] = (double)rand() / RAND_MAX;
 	}
