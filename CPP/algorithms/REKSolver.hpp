@@ -8,6 +8,7 @@
 #ifndef REKSOLVER_HPP_
 #define REKSOLVER_HPP_
 
+#include<iostream>
 #include "../matrix/DoubleMatrix.hpp"
 
 class REKSolver{
