@@ -2,3 +2,5 @@
 REK-CPP
 **/*.o
 testSampler
+testDense
+testSparse

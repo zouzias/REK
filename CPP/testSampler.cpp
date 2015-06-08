@@ -15,7 +15,7 @@ using namespace std;
 
 int main(void) {
 
-	int n = 50, numSamples = 30;
+	int n = 100, numSamples = 500;
 	double std = 10.0;
 	std::vector<double> prob(n);
 

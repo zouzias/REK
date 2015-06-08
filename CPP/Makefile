@@ -1,28 +1,34 @@
 CXX=g++
 CXXFLAGS =	-O2 -g -Wall -std=gnu++0x
 
-OBJS =		REK-CPP.o vector/DoubleVector.o \
+OBJS =	 vector/DoubleVector.o \
 					vector/SparseVector.o vector/DenseVector.o \
 					matrix/DoubleMatrix.o matrix/impl/DenseMatrix.o matrix/impl/SparseMatrix.o \
 					algorithms/REKSolver.o samplers/AliasSampler.o
 
 LIBS = -lm
 
-TARGET =	REK-CPP
+TARGET =	main
 
 $(TARGET):	$(OBJS)
-	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
+	$(CXX) -c main.cpp
+	$(CXX) -o $(TARGET) 	main.o $(OBJS) $(LIBS)
 
 all:	$(TARGET)
 
 
-test: testSampler
+test: testSampler testDense
 
 testSampler: testSampler.o samplers/AliasSampler.o
 	$(CXX) -c testSampler.cpp
 	$(CXX) -o testSampler testSampler.o samplers/AliasSampler.o $(LIBS)
 	./testSampler
-	
+
+testDense: testDense.o ${OBJS}
+	$(CXX) -c testDense.cpp
+	$(CXX) -o testDense testDense.o ${OBJS} $(LIBS)
+	./testDense
+
 
 
 clean:
