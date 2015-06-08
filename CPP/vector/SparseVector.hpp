@@ -21,6 +21,7 @@ public:
 	};
 
 	SparseVector(int size): DoubleVector(size), _values(){
+		_size = size;
 	};
 
 	~SparseVector(){

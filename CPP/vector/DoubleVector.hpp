@@ -4,6 +4,7 @@
 #define DOUBLEVECTOR_HPP_
 
 #include <vector>
+#include <assert.h>
 
 using namespace std;
 

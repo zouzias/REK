@@ -26,6 +26,7 @@
 		};
 
     void DoubleVector::DAXPY(double alpha, const DoubleVector& x){
+			assert( _size == x.size());
 			for(int i = 0; i < _size; i++){
 				set(i, get(i) + alpha * x.get(i));
 			}
@@ -33,8 +34,7 @@
 
     double DoubleVector::DDOT(const DoubleVector& x){
 			double value = 0.0;
-			if ( _size != x.size())
-				return 0.0;
+			assert( _size == x.size());
 
 			for( int i = 0 ; i < _size; i++){
 				value += get(i) * x.get(i);

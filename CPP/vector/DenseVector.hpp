@@ -20,9 +20,11 @@ public:
 	};
 
 	DenseVector(int size): DoubleVector(size), _vector(size){
+		_size = size;
 	};
 
 	DenseVector(const DoubleVector& vec): _vector(vec.size()){
+		_size = vec.size();
 		for (int i = 0; i < _vector.size(); i++){
 			_vector[i] = vec.get(i);
 		}
