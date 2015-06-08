@@ -17,7 +17,7 @@ $(TARGET):	$(OBJS)
 all:	$(TARGET)
 
 
-test: testSampler testDense
+test: testSampler testDense testSparse
 
 testSampler: testSampler.o samplers/AliasSampler.o
 	$(CXX) -c testSampler.cpp
@@ -28,6 +28,11 @@ testDense: testDense.o ${OBJS}
 	$(CXX) -c testDense.cpp
 	$(CXX) -o testDense testDense.o ${OBJS} $(LIBS)
 	./testDense
+
+testDense: testSparse.o ${OBJS}
+	$(CXX) -c testSparse.cpp
+	$(CXX) -o testSparse testSparse.o ${OBJS} $(LIBS)
+	./testSparse
 
 
 
