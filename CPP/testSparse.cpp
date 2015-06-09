@@ -29,7 +29,7 @@ int main(void) {
 	long ITERS = 1000000;
 	DoubleVector* x = solver.solve(*A, *b, ITERS);
 
-	// Error must be smaller than 0.1
+	// Error must be smaller than 0.5
 	x->minus(*xopt);
 	cout<< "Error is " << x->DNRM2() << endl;
 	assert( x->DNRM2() <= 0.5);

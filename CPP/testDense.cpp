@@ -16,12 +16,16 @@
 using namespace std;
 
 int main(void) {
+	// A is an (m, n ) random matrix
 	int m= 100, n = 10;
-
 	DoubleMatrix* A = new DenseMatrix(m,n);
+	A->random();
+
+	// xopt is a random n-vector
 	DoubleVector* xopt = new DenseVector(n);
 	xopt->random();
-	A->random();
+
+	// b = A * x
 	DoubleVector* b = A->times(*xopt);
 
 	REKSolver solver = REKSolver();
@@ -29,7 +33,7 @@ int main(void) {
 	long ITERS = 1000000;
 	DoubleVector* x = solver.solve(*A, *b, ITERS);
 
-	// Error must be smaller than 0.1
+	// Error must be smaller than 0.5
 	x->minus(*xopt);
 	cout<< "Error is " << x->DNRM2() << endl;
 	assert( x->DNRM2() <= 0.5);

@@ -6,20 +6,17 @@
  */
 
 #include "REKSolver.hpp"
-
 #include "../vector/DenseVector.hpp"
 #include "../samplers/AliasSampler.hpp"
 #include <stdlib.h>
 
 DoubleVector*	 REKSolver::solve(const DoubleMatrix& A, const DoubleVector& b, double MaxSeconds){
 	DoubleVector* vector = new DenseVector();
-
 	return vector;
 };
 
 
 DoubleVector* REKSolver::solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations){
-
 	double val;
   int i_k, j_k;
   DoubleVector* x = new DenseVector(A.getColumnDimension());

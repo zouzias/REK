@@ -106,7 +106,6 @@ public:
 				_rows[i]->set(j, s);
 				_columns[j]->set(i, s);
 			}
-
 };
 
 #endif /* DENSEMATRIX_HPP_ */

@@ -19,7 +19,6 @@
 #define uint unsigned int
 #endif
 
-
 class AliasSampler{
 
 private:
@@ -35,7 +34,6 @@ public:
   };
 
   AliasSampler(const std::vector<double> probs){
-
     uint j;
     double sum = 0;
 
@@ -150,7 +148,6 @@ public:
 
     return i - 1;
   }
-
 };
 
 #endif /* ALIASMETHOD_HPP_ */

@@ -14,14 +14,10 @@
 class REKSolver{
 
 public:
-
-	REKSolver(){
-
-	}
+	REKSolver(){}
 
 	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, double MaxSeconds);
 	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations);
 };
-
 
 #endif /* REKSOLVER_HPP_ */

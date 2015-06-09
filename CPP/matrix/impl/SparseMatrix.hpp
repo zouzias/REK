@@ -32,13 +32,11 @@ public:
 	};
 
 	~SparseMatrix(){
-			for(int i = 0; i < _rows.size(); i++){
+			for(int i = 0; i < _rows.size(); i++)
 				delete _rows[i];
-			}
 
-			for(int j = 0; j < _columns.size(); j++){
+			for(int j = 0; j < _columns.size(); j++)
 				delete _columns[j];
-			}
 	};
 
 	virtual void random(){
@@ -111,7 +109,6 @@ public:
 		_rows[i]->set(j, s);
 		_columns[j]->set(i, s);
 	}
-
 };
 
 #endif /* SPARSEMATRIX_HPP_ */
