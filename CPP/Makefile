@@ -29,7 +29,7 @@ testDense: testDense.o ${OBJS}
 	$(CXX) -o testDense testDense.o ${OBJS} $(LIBS)
 	./testDense
 
-testDense: testSparse.o ${OBJS}
+testSparse: testSparse.o ${OBJS}
 	$(CXX) -c testSparse.cpp
 	$(CXX) -o testSparse testSparse.o ${OBJS} $(LIBS)
 	./testSparse
