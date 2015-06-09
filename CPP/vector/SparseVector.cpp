@@ -1,7 +1,7 @@
 #include "SparseVector.hpp"
 
 void SparseVector::random(){
-	/* initialize random seed: */
+	/* initialize random seed */
 	srand (time(NULL));
 
 	for(int i = 0; i < _size; i++){
@@ -14,12 +14,10 @@ int SparseVector::size() const{
 };
 
 double SparseVector::get(int index) const{
-	if ( _values.find(index) != _values.end() ){
+	if ( _values.find(index) != _values.end())
 		return _values.at(index);
-	}
-	else{
+	else
 		return 0.0;
-	}
 };
 
 void SparseVector::set(int index, double value){

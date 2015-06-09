@@ -2,7 +2,6 @@
 #ifndef DENSEVECTOR_HPP_
 #define DENSEVECTOR_HPP_
 
-
 #include "DoubleVector.hpp"
 #include <assert.h>
 #include <stdlib.h>
@@ -12,6 +11,7 @@
 class DenseVector : public DoubleVector {
 
 private:
+
 std::vector<double> _vector;
 
 public:

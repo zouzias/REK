@@ -6,8 +6,6 @@
 #include <vector>
 #include <assert.h>
 
-using namespace std;
-
 class DoubleVector{
 
 protected:
@@ -75,7 +73,6 @@ public:
 	virtual void minus(const DoubleVector& x);
 
 	virtual std::vector<double>* asVector();
-
 };
 
 #endif
