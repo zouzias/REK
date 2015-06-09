@@ -1,5 +1,5 @@
 *.o
-REK-CPP
+main
 **/*.o
 testSampler
 testDense
