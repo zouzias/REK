@@ -8,7 +8,7 @@
 #define DENSEMATRIX_HPP_
 
 #include "../DoubleMatrix.hpp"
-#include "../../vector/DenseVector.hpp"
+#include "../../vector/impl/DenseVector.hpp"
 
 class DenseMatrix : public DoubleMatrix {
 protected:

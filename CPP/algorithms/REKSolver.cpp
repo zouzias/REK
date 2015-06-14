@@ -6,7 +6,7 @@
  */
 
 #include "REKSolver.hpp"
-#include "../vector/DenseVector.hpp"
+#include "../vector/impl/DenseVector.hpp"
 #include "../samplers/AliasSampler.hpp"
 #include <stdlib.h>
 

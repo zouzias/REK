@@ -2,7 +2,7 @@
 #ifndef DENSEVECTOR_HPP_
 #define DENSEVECTOR_HPP_
 
-#include "DoubleVector.hpp"
+#include "../DoubleVector.hpp"
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>

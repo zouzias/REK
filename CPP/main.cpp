@@ -13,7 +13,7 @@
 
 
 #include "matrix/impl/DenseMatrix.hpp"
-#include "vector/DenseVector.hpp"
+#include "vector/impl/DenseVector.hpp"
 
 using namespace std;
 

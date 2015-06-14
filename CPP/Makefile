@@ -1,7 +1,7 @@
 CXX=g++
 CXXFLAGS =	-O2 -g -Wall -std=gnu++0x
 
-OBJS =	 vector/DoubleVector.o vector/SparseVector.o vector/DenseVector.o \
+OBJS =	 vector/DoubleVector.o vector/impl/SparseVector.o vector/impl/DenseVector.o \
 					matrix/DoubleMatrix.o matrix/impl/DenseMatrix.o matrix/impl/SparseMatrix.o \
 					algorithms/REKSolver.o samplers/AliasSampler.o
 

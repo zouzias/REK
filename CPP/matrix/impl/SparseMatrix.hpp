@@ -10,8 +10,8 @@
 
 #include<vector>
 #include "../DoubleMatrix.hpp"
-#include "../../vector/SparseVector.hpp"
-#include "../../vector/DenseVector.hpp"
+#include "../../vector/impl/SparseVector.hpp"
+#include "../../vector/impl/DenseVector.hpp"
 
 class SparseMatrix : public DoubleMatrix{
 
