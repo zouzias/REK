@@ -31,5 +31,10 @@ testSparse: testSparse.o ${OBJS}
 	$(CXX) -o testSparse testSparse.o ${OBJS} $(LIBS)
 	./testSparse
 
+testVector: testVector.o ${OBJS}
+	$(CXX) -c testVector.cpp
+	$(CXX) -o testVector testVector.o ${OBJS} $(LIBS)
+	./testVector
+
 clean:
 	rm -f $(OBJS) $(TARGET) *.o
