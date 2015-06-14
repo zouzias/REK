@@ -37,14 +37,14 @@ public:
      *
      * @return
      */
-    virtual int getRowDimension()  const = 0;
+    virtual int numRows()  const = 0;
 
     /**
      * Get the number of columns
      *
      * @return
      */
-    virtual int getColumnDimension()  const = 0;
+    virtual int numCols()  const = 0;
 
     /**
      * Get the i-th row

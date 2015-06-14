@@ -32,7 +32,7 @@ int main(void) {
 	DoubleVector* x = solver.solve(*A, *b, ITERS);
 
 	cout<<"(x , xopt)"<<endl;
-	for (int j = 0 ; j < A->getColumnDimension(); j++){
+	for (int j = 0 ; j < A->numCols(); j++){
 		cout<< x->get(j) << " , " << xopt->get(j) <<endl;
 	}
 

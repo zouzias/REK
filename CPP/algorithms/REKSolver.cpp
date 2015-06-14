@@ -19,7 +19,7 @@ DoubleVector*	 REKSolver::solve(const DoubleMatrix& A, const DoubleVector& b, do
 DoubleVector* REKSolver::solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations){
 	double val;
   int i_k, j_k;
-  DoubleVector* x = new DenseVector(A.getColumnDimension());
+  DoubleVector* x = new DenseVector(A.numCols());
   DoubleVector* z = new DenseVector(b);
   DoubleVector* rowNorms = A.rowNorms();
 	DoubleVector* columnNorms = A.columnNorms();

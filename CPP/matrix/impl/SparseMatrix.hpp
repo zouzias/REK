@@ -52,11 +52,11 @@ public:
 		}
 	}
 
-	virtual int getRowDimension() const{
+	virtual int numRows() const{
 		return _rows.size();
 	}
 
-	virtual int getColumnDimension() const{
+	virtual int numCols() const{
 		return _columns.size();
 	}
 
@@ -85,8 +85,8 @@ public:
 	}
 
 	virtual DoubleVector* times(const DoubleVector& x) const{
-		DoubleVector* Ax = new DenseVector(getRowDimension());
-		for(int j = 0, n = getColumnDimension(); j < n; j++){
+		DoubleVector* Ax = new DenseVector(numRows());
+		for(int j = 0, n = numCols(); j < n; j++){
 			Ax->DAXPY(x.get(j), this->getColumn(j));
 		}
 
