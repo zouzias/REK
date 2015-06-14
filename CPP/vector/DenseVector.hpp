@@ -9,7 +9,6 @@
 #include <vector>
 
 class DenseVector : public DoubleVector {
-
 private:
 
 std::vector<double> _vector;
