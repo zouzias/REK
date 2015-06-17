@@ -14,7 +14,7 @@ $(TARGET):	$(OBJS)
 
 all:	$(TARGET)
 
-test: testSampler testDense testSparse
+test: testSampler testDense testSparse testVector
 
 testSampler: testSampler.o samplers/AliasSampler.o
 	$(CXX) -c testSampler.cpp
