@@ -30,8 +30,7 @@ private:
 
 public:
 
-  ~AliasSampler(){
-  };
+  ~AliasSampler(){};
 
   AliasSampler(const std::vector<double> probs){
     uint j;
@@ -76,7 +75,6 @@ public:
 
   std::vector<uint>* sample(int numSamples){
     std::vector<uint>* samples = new std::vector<uint>(numSamples);
-
     // Sample from Alias Sampler
     for (int k = 0; k < numSamples; k++)
         (*samples)[k] = walkerSample();

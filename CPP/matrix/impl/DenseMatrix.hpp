@@ -81,9 +81,8 @@ public:
 
 			virtual DoubleVector* times(const DoubleVector& x) const{
 				DoubleVector* Ax = new DenseVector(numRows());
-				for(int j = 0, n = numCols(); j < n; j++){
+				for(int j = 0, n = numCols(); j < n; j++)
 					Ax->DAXPY(x.get(j), this->getColumn(j));
-				}
 
 				return Ax;
 			}

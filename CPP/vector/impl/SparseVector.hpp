@@ -10,22 +10,20 @@
 class DoubleVector;
 
 class SparseVector: public DoubleVector{
-private:
 
-std::map<int, double> _values;
-typedef std::map<int, double>::iterator values_iter;
+private:
+	std::map<int, double> _values;
+	typedef std::map<int, double>::iterator values_iter;
 
 public:
 
-	SparseVector(): DoubleVector(DEFAULT_SIZE), _values(){
-	};
+	SparseVector(): DoubleVector(DEFAULT_SIZE), _values(){};
 
 	SparseVector(int size): DoubleVector(size), _values(){
 		_size = size;
 	};
 
-	~SparseVector(){
-	};
+	~SparseVector(){};
 
 	void random();
 

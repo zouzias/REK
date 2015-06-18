@@ -7,7 +7,6 @@ class DoubleVector;
 class DoubleMatrix{
 
 protected:
-
   int m, n;
   const static int DEFAULT_SIZE = 10;
 
@@ -23,8 +22,7 @@ public:
       this->n = n;
     };
 
-    virtual ~DoubleMatrix(){
-    };
+    virtual ~DoubleMatrix(){};
 
 	   /**
      * Fill in the entries with random values
