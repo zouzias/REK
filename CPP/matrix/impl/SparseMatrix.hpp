@@ -68,34 +68,34 @@ public:
 		return *_columns[j];
 	}
 
-	virtual DoubleVector* rowNorms() const{
-		DoubleVector* rowNRMs = new DenseVector(_rows.size());
+	virtual DoubleVector& rowNorms() const{
+		DoubleVector& rowNRMs = *new DenseVector(_rows.size());
 		for (int i = 0, m = _rows.size(); i < m; i++)
-			rowNRMs->set(i, getRow(i).DNRM2());
+			rowNRMs.set(i, getRow(i).DNRM2());
 
 		return rowNRMs;
 	}
 
-	virtual DoubleVector* columnNorms() const{
-		DoubleVector* colNRMs = new DenseVector(_columns.size());
+	virtual DoubleVector& columnNorms() const{
+		DoubleVector& colNRMs = *new DenseVector(_columns.size());
 		for (int j = 0, n = _columns.size(); j < n; j++)
-			colNRMs->set(j, getColumn(j).DNRM2());
+			colNRMs.set(j, getColumn(j).DNRM2());
 
 		return colNRMs;
 	}
 
-	virtual DoubleVector* times(const DoubleVector& x) const{
-		DoubleVector* Ax = new DenseVector(numRows());
+	virtual DoubleVector& times(const DoubleVector& x) const{
+		DoubleVector& Ax = *new DenseVector(numRows());
 		for(int j = 0, n = numCols(); j < n; j++)
-			Ax->DAXPY(x.get(j), this->getColumn(j));
+			Ax.DAXPY(x.get(j), this->getColumn(j));
 
 		return Ax;
 	}
 
 	virtual double normF() const{
-		DoubleVector* rowNorms = this->rowNorms();
-		double frobenius = rowNorms->DNRM2();
-		delete rowNorms;
+		DoubleVector& rowNorms = this->rowNorms();
+		double frobenius = rowNorms.DNRM2();
+		delete &rowNorms;
 
 		return frobenius;
 	}
@@ -108,7 +108,7 @@ public:
 		_rows[i]->set(j, s);
 		_columns[j]->set(i, s);
 	}
-	
+
 };
 
 #endif /* SPARSEMATRIX_HPP_ */

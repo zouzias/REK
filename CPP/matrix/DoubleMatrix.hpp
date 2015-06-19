@@ -66,7 +66,7 @@ public:
      *
      * @return A vector of size equal to the number of rows containing the above probability distribution.
      */
-    virtual DoubleVector* rowNorms()  const = 0;
+    virtual DoubleVector& rowNorms()  const = 0;
 
     /**
      * Compute a distribution over the columns. Namely, the j-th column A(j) has probability mass
@@ -74,7 +74,7 @@ public:
      *
      * @return A vector of size equal to the number of column containing the above probability distribution.
      */
-    virtual DoubleVector* columnNorms()  const = 0;
+    virtual DoubleVector& columnNorms()  const = 0;
 
     /**
      * Computes y = A * x
@@ -82,7 +82,7 @@ public:
      * @param x
      * @return y
      */
-    virtual DoubleVector* times(const DoubleVector& x) const = 0; // y = A * x
+    virtual DoubleVector& times(const DoubleVector& x) const = 0; // y = A * x
 
     /**
      * Frobenius norm of a matrix A, i.e., normF(A)= sqrt(sum_{i,j} A(i,j)^2)

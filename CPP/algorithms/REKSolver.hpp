@@ -16,8 +16,8 @@ class REKSolver{
 public:
 	REKSolver(){}
 
-	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, double MaxSeconds);
-	DoubleVector* solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations);
+	DoubleVector& solve(const DoubleMatrix& A, const DoubleVector& b, double MaxSeconds);
+	DoubleVector& solve(const DoubleMatrix& A, const DoubleVector& b, long MaxIterations);
 };
 
 #endif /* REKSOLVER_HPP_ */

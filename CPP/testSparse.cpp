@@ -18,21 +18,21 @@ using namespace std;
 int main(void) {
 	int m= 100, n = 10;
 
-	DoubleMatrix* A = new SparseMatrix(m,n);
-	DoubleVector* xopt = new DenseVector(n);
-	xopt->random();
-	A->random();
-	DoubleVector* b = A->times(*xopt);
+	DoubleMatrix& A = *new SparseMatrix(m,n);
+	DoubleVector& xopt = *new DenseVector(n);
+	xopt.random();
+	A.random();
+	DoubleVector& b = A.times(xopt);
 
 	REKSolver solver = REKSolver();
 
 	long ITERS = 1000000;
-	DoubleVector* x = solver.solve(*A, *b, ITERS);
+	DoubleVector& x = solver.solve(A, b, ITERS);
 
 	// Error must be smaller than 0.5
-	x->minus(*xopt);
-	cout<< "Error is " << x->DNRM2() << endl;
-	assert( x->DNRM2() <= 0.5);
+	x.minus(xopt);
+	cout<< "Error is " << x.DNRM2() << endl;
+	assert( x.DNRM2() <= 0.5);
 	cout<< "Success..." << endl;
 
 	return 0;

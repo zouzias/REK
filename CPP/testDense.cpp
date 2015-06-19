@@ -18,26 +18,29 @@ using namespace std;
 int main(void) {
 	// A is an (m, n ) random matrix
 	int m= 100, n = 10;
-	DoubleMatrix* A = new DenseMatrix(m,n);
-	A->random();
+	DoubleMatrix& A = *new DenseMatrix(m,n);
+	A.random();
 
 	// xopt is a random n-vector
-	DoubleVector* xopt = new DenseVector(n);
-	xopt->random();
+	DoubleVector& xopt = *new DenseVector(n);
+	xopt.random();
 
 	// b = A * x
-	DoubleVector* b = A->times(*xopt);
+	DoubleVector& b = A.times(xopt);
 
 	REKSolver solver = REKSolver();
 
 	long ITERS = 1000000;
-	DoubleVector* x = solver.solve(*A, *b, ITERS);
+	DoubleVector& x = solver.solve(A, b, ITERS);
 
 	// Error must be smaller than 0.5
-	x->minus(*xopt);
-	cout<< "Error is " << x->DNRM2() << endl;
-	assert( x->DNRM2() <= 0.5);
+	x.minus(xopt);
+	cout<< "Error is " << x.DNRM2() << endl;
+	assert( x.DNRM2() <= 0.5);
 	cout<< "Success..." << endl;
+
+	delete &A;
+	delete &xopt;
 
 	return 0;
 }
