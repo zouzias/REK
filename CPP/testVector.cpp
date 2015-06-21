@@ -8,15 +8,15 @@ using namespace std;
 
 int main(void) {
 
-	int m= 1000, n = 500;
+	unsigned int m= 1000, n = 500;
 
 	DoubleVector* x = new SparseVector(m);
   DoubleVector* y = new DenseVector(n);
 
-  for(int i = 0 ; i < m; i++)
+  for(unsigned int i = 0 ; i < m; i++)
     x->set(i, 1.0);
 
-  for(int j = 0 ; j < n; j++)
+  for(unsigned int j = 0 ; j < n; j++)
     y->set(j, 1.0);
 
 

@@ -17,7 +17,7 @@ using namespace std;
 
 int main(void) {
 	// A is an (m, n ) random matrix
-	int m= 100, n = 10;
+	unsigned int m= 100, n = 10;
 	DoubleMatrix& A = *new DenseMatrix(m,n);
 	A.random();
 

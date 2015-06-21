@@ -16,7 +16,7 @@
 using namespace std;
 
 int main(void) {
-	int m= 100, n = 10;
+	unsigned int m= 100, n = 10;
 
 	DoubleMatrix& A = *new SparseMatrix(m,n);
 	DoubleVector& xopt = *new DenseVector(n);

@@ -11,14 +11,14 @@
 			_size = DEFAULT_SIZE;
 		};
 
-		DoubleVector::DoubleVector(int size){
+		DoubleVector::DoubleVector(unsigned int size){
 			_size = size;
 		};
 
 		double DoubleVector::DNRM2(){
 			double nrm2 = 0.0;
 
-			for(int i = 0; i < _size; i++){
+			for(unsigned int i = 0; i < _size; i++){
 				nrm2 += get(i) * get(i);
 			}
 
@@ -27,7 +27,7 @@
 
     void DoubleVector::DAXPY(double alpha, const DoubleVector& x){
 			assert( _size == x.size());
-			for(int i = 0; i < _size; i++){
+			for(unsigned int i = 0; i < _size; i++){
 				set(i, get(i) + alpha * x.get(i));
 			}
     };
@@ -36,7 +36,7 @@
 			double value = 0.0;
 			assert( _size == x.size());
 
-			for( int i = 0 ; i < _size; i++){
+			for(unsigned int i = 0 ; i < _size; i++){
 				value += get(i) * x.get(i);
 			}
     	return value;
@@ -49,7 +49,7 @@
 		std::vector<double>* DoubleVector::asVector(){
 			std::vector<double>* vec = new std::vector<double>(size());
 
-			for ( int i = 0; i < vec->size(); i++){
+			for (unsigned int i = 0; i < vec->size(); i++){
 				(*vec)[i] = get(i);
 			}
 

@@ -10,11 +10,11 @@ class DoubleVector{
 
 protected:
 	const static int DEFAULT_SIZE = 10;
-	int _size;
+	unsigned int _size;
 public:
 
 	DoubleVector();
-	DoubleVector(int size);
+	DoubleVector(unsigned int size);
 	virtual ~DoubleVector(){
 	};
 
@@ -44,21 +44,21 @@ public:
 	 *
 	 * @return
 	 */
-	virtual int size() const = 0;
+	virtual unsigned int size() const = 0;
 
 	/** Get the i-th entry of the vector
 	 *
 	 * @param index
 	 * @return
 	 */
-	virtual double get(int index) const = 0;
+	virtual double get(unsigned int index) const = 0;
 
 	/** Set the i-th entry of the vector
 	 *
 	 * @param index
 	 * @param value
 	 */
-	virtual void set(int index, double value) = 0;
+	virtual void set(unsigned int index, double value) = 0;
 
 	/** Scale the vector by alpha
 	 *

@@ -18,7 +18,7 @@ public:
 
 	SparseVector(): DoubleVector(DEFAULT_SIZE), _values(){};
 
-	SparseVector(int size): DoubleVector(size), _values(){
+	SparseVector(unsigned int size): DoubleVector(size), _values(){
 		_size = size;
 	};
 
@@ -26,11 +26,11 @@ public:
 
 	void random();
 
-	int size() const;
+	unsigned int size() const;
 
-	double get(int index) const;
+	double get(unsigned int index) const;
 
-	void set(int index, double value);
+	void set(unsigned int index, double value);
 
 	void scale(double alpha);
 

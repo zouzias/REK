@@ -18,7 +18,7 @@
 using namespace std;
 
 int main(void) {
-	int m= 100, n = 10;
+	unsigned int m= 100, n = 10;
 
 	DoubleMatrix& A = *new DenseMatrix(m,n);
 	DoubleVector& xopt = *new DenseVector(n);
@@ -32,7 +32,7 @@ int main(void) {
 	DoubleVector& x = solver.solve(A, b, ITERS);
 
 	cout<<"(x , xopt)"<<endl;
-	for (int j = 0 ; j < A.numCols(); j++){
+	for (unsigned int j = 0 ; j < A.numCols(); j++){
 		cout<< x.get(j) << " , " << xopt.get(j) <<endl;
 	}
 

@@ -7,7 +7,7 @@ class DoubleVector;
 class DoubleMatrix{
 
 protected:
-  int m, n;
+  unsigned int m, n;
   const static int DEFAULT_SIZE = 10;
 
 public:
@@ -17,7 +17,7 @@ public:
       this->n = DEFAULT_SIZE;
     };
 
-    DoubleMatrix(int m, int n){
+    DoubleMatrix(unsigned int m, unsigned int n){
       this->m = m;
       this->n = n;
     };
@@ -50,7 +50,7 @@ public:
      * @param i
      * @return
      */
-    virtual DoubleVector& getRow(int i)  const = 0;
+    virtual DoubleVector& getRow(unsigned int i)  const = 0;
 
     /**
      * Get the j-th column
@@ -58,7 +58,7 @@ public:
      * @param j
      * @return
      */
-    virtual DoubleVector& getColumn(int j) const = 0;
+    virtual DoubleVector& getColumn(unsigned int j) const = 0;
 
     /**
      * Compute a distribution over the rows. Namely, the i-th row A_i has probability mass
@@ -98,7 +98,7 @@ public:
      * @param j
      * @return
      */
-    virtual double get(int i, int j) const = 0;
+    virtual double get(unsigned int i, unsigned int j) const = 0;
 
     /**
      * Set (i,j)-th entry of matrix to s
@@ -107,7 +107,7 @@ public:
      * @param j
      * @param s
      */
-     virtual void set(int i, int j, double s) = 0;
+     virtual void set(unsigned int i, unsigned int j, double s) = 0;
 
 };
 

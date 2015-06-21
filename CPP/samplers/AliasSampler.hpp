@@ -23,7 +23,7 @@ class AliasSampler{
 
 private:
 
-  int N;
+  unsigned int N;
   std::vector<uint> A;
   std::vector<uint> B;
   std::vector<double> Y;
@@ -36,7 +36,7 @@ public:
     uint j;
     double sum = 0;
 
-    this->N = probs.size();
+    this->N = (unsigned int)probs.size();
     this->A = *new std::vector<uint>(N + 2);
     this->B = *new std::vector<uint>(N + 2);
     this->Y = *new std::vector<double>(N + 2);
@@ -57,7 +57,7 @@ public:
     uint j;
     double sum = 0;
 
-    this->N = probs.size();
+    this->N = (unsigned int)probs.size();
     this->A = *new std::vector<uint>(N + 2);
     this->B = *new std::vector<uint>(N + 2);
     this->Y = *new std::vector<double>(N + 2);
@@ -73,10 +73,10 @@ public:
 
   };
 
-  std::vector<uint>* sample(int numSamples){
+  std::vector<uint>* sample(unsigned int numSamples){
     std::vector<uint>* samples = new std::vector<uint>(numSamples);
     // Sample from Alias Sampler
-    for (int k = 0; k < numSamples; k++)
+    for (unsigned int k = 0; k < numSamples; k++)
         (*samples)[k] = walkerSample();
 
     return samples;

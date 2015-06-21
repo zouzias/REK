@@ -17,29 +17,29 @@ protected:
 
 public:
 
-			DenseMatrix(int m, int n): DoubleMatrix(m,n){
+			DenseMatrix(unsigned int m, unsigned int n): DoubleMatrix(m,n){
 				// Init rows
-				for(int i = 0; i < m; i++)
+				for(unsigned int i = 0; i < m; i++)
 					_rows.push_back(new DenseVector(n));
 
 				// Init columns
-				for(int j = 0; j < n; j++)
+				for(unsigned int j = 0; j < n; j++)
 					_columns.push_back(new DenseVector(m));
 			};
 
 			~DenseMatrix(){
-				for(int i = 0; i < _rows.size(); i++){
+				for(unsigned int i = 0; i < _rows.size(); i++){
 					delete _rows[i];
 				}
 
-				for(int j = 0; j < _columns.size(); j++){
+				for(unsigned int j = 0; j < _columns.size(); j++){
 					delete _columns[j];
 				}
 			};
 
 			virtual void random(){
-				for (int i = 0, m = _rows.size(); i < m; i++){
-					for (int j = 0, n = _columns.size(); j < n; j++) {
+				for (unsigned int i = 0, m = _rows.size(); i < m; i++){
+					for (unsigned int j = 0, n = _columns.size(); j < n; j++) {
 						double val = (double)rand() / RAND_MAX;
 						_rows[i]->set(j, val);
 						_columns[j]->set(i, val);
@@ -55,17 +55,17 @@ public:
 				return _columns.size();
 			}
 
-			virtual DoubleVector& getRow(int i)  const{
+			virtual DoubleVector& getRow(unsigned int i)  const{
 				return *_rows[i];
 			}
 
-			virtual DoubleVector& getColumn(int j) const{
+			virtual DoubleVector& getColumn(unsigned int j) const{
 				return *_columns[j];
 			}
 
 			virtual DoubleVector& rowNorms()  const{
 				DoubleVector& rowNRMs = *new DenseVector(_rows.size());
-					for (int i = 0, m = _rows.size(); i < m; i++)
+					for (unsigned int i = 0, m = _rows.size(); i < m; i++)
 						rowNRMs.set(i, getRow(i).DNRM2());
 
 				return rowNRMs;
@@ -73,7 +73,7 @@ public:
 
 			virtual DoubleVector& columnNorms()  const{
 				DoubleVector& colNRMs = *new DenseVector(_columns.size());
-					for (int j = 0, n = _columns.size(); j < n; j++)
+					for (unsigned int j = 0, n = _columns.size(); j < n; j++)
 					colNRMs.set(j, getColumn(j).DNRM2());
 
 				return colNRMs;
@@ -81,7 +81,7 @@ public:
 
 			virtual DoubleVector& times(const DoubleVector& x) const{
 				DoubleVector& Ax = *new DenseVector(numRows());
-				for(int j = 0, n = numCols(); j < n; j++)
+				for(unsigned int j = 0, n = numCols(); j < n; j++)
 					Ax.DAXPY(x.get(j), getColumn(j));
 
 				return Ax;
@@ -95,11 +95,11 @@ public:
 				return frobenius;
 			}
 
-			virtual double get(int i, int j) const {
+			virtual double get(unsigned int i, unsigned int j) const {
 				return _rows[i]->get(j);
 			}
 
-			virtual void set(int i, int j, double s){
+			virtual void set(unsigned int i, unsigned int j, double s){
 				_rows[i]->set(j, s);
 				_columns[j]->set(i, s);
 			}
