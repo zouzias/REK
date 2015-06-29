@@ -1,18 +1,19 @@
 CC=gcc
-CFLAGS=-c -Wall -O3 
+CFLAGS=-c -Wall -O3
 SUBDIRS= src . tests
 CHECK_LIBS=/usr/local/Cellar/check/0.9.14/lib/
+LIBS=-lm
 
 all: REK
 
 test: REK tests/check_test.c
 	export CK_DEFAULT_TIMEOUT=100
 	gcc -c tests/check_test.c
-	gcc check_test.o matrix.o sparseMatrix.o aliasSampler.o utils.o cBLAS.o REKBLAS.o -L${CHECK_LIBS} -lcheck -o test
+	gcc check_test.o matrix.o sparseMatrix.o aliasSampler.o utils.o cBLAS.o REKBLAS.o -L${CHECK_LIBS} -lcheck ${LIBS} -o test
 	./test
 
 REK: main.o matrix.o sparseMatrix.o aliasSampler.o utils.o cBLAS.o REKBLAS.o
-	gcc matrix.o sparseMatrix.o aliasSampler.o utils.o cBLAS.o REKBLAS.o main.o -o REK
+	gcc matrix.o sparseMatrix.o aliasSampler.o utils.o cBLAS.o REKBLAS.o main.o -o REK ${LIBS}
 
 main.o: main.c
 	$(CC) $(CFLAGS) main.c

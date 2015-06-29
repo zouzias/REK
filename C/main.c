@@ -19,7 +19,7 @@
 #include <time.h>
 #include <math.h>
 #include <stddef.h>
-#include "algorithms/REK/REKBlas.h"
+#include "algorithms/REK/REKBLAS.h"
 #include "matrix/sparseMatrix.h"
 #include "matrix/matrix.h"
 #include "utils/utils.h"

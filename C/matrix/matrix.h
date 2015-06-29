@@ -14,7 +14,7 @@
 #include <stdlib.h>		// malloc
 #include <stddef.h>
 #include <string.h>		// memset, memcpy
-#include"../cBLAS/cblas.h"  // for DDOT, DAXPY, DNRM2
+#include"../cBLAS/cBLAS.h"  // for DDOT, DAXPY, DNRM2
 
 /**
  * A two-dimensional dense matrix struct

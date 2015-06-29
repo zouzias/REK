@@ -7,17 +7,17 @@
    Copyright (C) 2006 Michael P. Friedlander, Department of Computer
    Science, University of British Columbia, Canada. All rights
    reserved. E-mail: <mpf@cs.ubc.ca>.
-   
+
    BCLS is free software; you can redistribute it and/or modify it
    under the terms of the GNU Lesser General Public License as
    published by the Free Software Foundation; either version 2.1 of the
    License, or (at your option) any later version.
-   
+
    BCLS is distributed in the hope that it will be useful, but WITHOUT
    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
    or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General
    Public License for more details.
-   
+
    You should have received a copy of the GNU Lesser General Public
    License along with BCLS; if not, write to the Free Software
    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
@@ -41,12 +41,12 @@
    - cblas_dscal
 */
 
-#include "cblas.h"
+#include "cBLAS.h"
 
 /*!
   \param[in]     N
   \param[in]     alpha
-  \param[in]     X      
+  \param[in]     X
   \param[in]     incX
   \param[in,out] Y
   \param[in]     incY
@@ -65,7 +65,7 @@ cblas_daxpy( const int N, const double alpha, const double *X,
 
       for (i = 0; i < m; i++)
           Y[i] += alpha * X[i];
-      
+
       for (i = m; i + 3 < N; i += 4) {
           Y[i    ] += alpha * X[i    ];
           Y[i + 1] += alpha * X[i + 1];
@@ -86,7 +86,7 @@ cblas_daxpy( const int N, const double alpha, const double *X,
 
 /*!
   \param[in]     N
-  \param[in]     X      
+  \param[in]     X
   \param[in]     incX
   \param[out]    Y
   \param[in]     incY
@@ -108,11 +108,11 @@ cblas_dcopy( const int N, const double *X,
 
 /*!
   \param[in]     N
-  \param[in]     X      
+  \param[in]     X
   \param[in]     incX
   \param[in]     Y
   \param[in]     incY
-  
+
   \return  Dot product of X and Y.
 
 */
@@ -130,19 +130,19 @@ cblas_ddot( const int N, const double *X,
       ix += incX;
       iy += incY;
   }
-  
+
   return r;
 }
 
 /*!
   \param[in]     N
-  \param[in]     X      
+  \param[in]     X
   \param[in]     incX
 
   \return Two-norm of X.
 */
 double
-cblas_dnrm2( const int N, const double *X, const int incX) 
+cblas_dnrm2( const int N, const double *X, const int incX)
 {
   double
       scale = 0.0,
@@ -163,11 +163,11 @@ cblas_dnrm2( const int N, const double *X, const int incX)
           if (scale < ax) {
               ssq   = 1.0 + ssq * (scale / ax) * (scale / ax);
               scale = ax;
-          } else 
+          } else
               ssq += (ax / scale) * (ax / scale);
       }
       ix += incX;
   }
-  
+
   return scale * sqrt(ssq);
 }

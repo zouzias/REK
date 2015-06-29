@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   utils.h
  * Author: Anastasios Zouzias
  *
@@ -9,7 +9,7 @@
 
 #include "../matrix/matrix.h"
 #include "../matrix/sparseMatrix.h"
-#include "../cBlas/cblas.h"
+#include "../cBLAS/cBLAS.h"
 
 // Wall time in linux
 double wtime();
@@ -18,7 +18,7 @@ double wtime();
  * Computes norm( A * x - (b - z), 2)
  *
  *
- * @param  A (Input) Dense matrix stored in struct matrix 
+ * @param  A (Input) Dense matrix stored in struct matrix
  * @param  x (Input) Vector
  * @param  b (Input) Vector
  * @param  z (Input) Vector
@@ -30,7 +30,7 @@ double residError(const MAT * A, double *x, const double *b, const double *z);
  * Computes norm( A * x - (b - z), 2)
  *
  *
- * @param  A (Input) Sparse matrix stored in struct sparseMat 
+ * @param  A (Input) Sparse matrix stored in struct sparseMat
  * @param  x (Input) Vector
  * @param  b (Input) Vector
  * @param  z (Input) Vector
@@ -68,7 +68,7 @@ double* gaussianVector(int size);
 
 /**
  * Computes the least-squares error of the ||Ax - b ||_2 with A sparse
- 
+
  * @param  A (Input) Sparse matrix of size m x n
  * @param  x (Input) Unknown vector of size n
  * @param  b (Input) Right hand side vector of size m
@@ -80,7 +80,7 @@ double lsErrorSparse(const SMAT* A, const double* x, const double* b);
 /**
  * Computes the least-squares error of the ||Ax - b ||_2
  *
- * @param  A (Input) Dense m x n matrix 
+ * @param  A (Input) Dense m x n matrix
  * @param  x (Input) Unknown vector of size n
  * @param  b (Input) Right hand side vector of size m
  * @return The Euclidean norm of the vector A * x - b
@@ -89,4 +89,3 @@ double lsErrorSparse(const SMAT* A, const double* x, const double* b);
 double lsError(const MAT* A, const double* x, const double* b);
 
 #endif  /* UTILS_H */
-

@@ -1,4 +1,4 @@
-#include "aliasSampler.h"
+#include "AliasSampler.h"
 
 ALIAS *
 createAliasSampler(const double *prob, uint n) {
@@ -125,4 +125,3 @@ BuildSampler(double *X, uint N, uint * A, uint * B) {
 }
 
 /**********************************************************************/
-
