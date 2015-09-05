@@ -13,7 +13,7 @@ Authors: [Anastasios Zouzias](https://github.com/zouzias) and Nikolaos Freris
 This project has been moved to the following projects
 </h3>
 
-* [REC-C](https://github.com/zouzias/REK-C)
-* [REC-CPP](https://github.com/zouzias/REK-CPP)
-* [REC-Java](https://github.com/zouzias/REK-Java)
+* [REK-C](https://github.com/zouzias/REK-C)
+* [REK-CPP](https://github.com/zouzias/REK-CPP)
+* [REK-Java](https://github.com/zouzias/REK-Java)
 
