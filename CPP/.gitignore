@@ -1,7 +1,0 @@
-*.o
-main
-**/*.o
-testSampler
-testDense
-testSparse
-testVector
