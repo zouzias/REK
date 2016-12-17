@@ -24,11 +24,11 @@ After compilation, you can execute the <b>randomized extended Kaczmarz</b> using
 
 where the <b>input/output</b> parameters are : 
 
-+ A        - <b>(Input) An m x n real matrix
-+ b        - <b>(Input) An m dimensional vector
-+ TOL      - <b>(Input) Tolerance parameter
-+ x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b
-+ dt       - <b>(Output) Elapsed time using Unix routine ftime()
++ A        - <b>(Input) An m x n real matrix</b>
++ b        - <b>(Input) An m dimensional vector</b>
++ TOL      - <b>(Input) Tolerance parameter</b>
++ x        - <b>(Output) An estimation of the minimum Euclidean norm least-squares solution of Ax=b</b>
++ dt       - <b>(Output) Elapsed time using Unix routine ftime()</b>
 
 <h2>
 Operating instructions
